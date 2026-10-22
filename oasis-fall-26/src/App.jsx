@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { supabase } from './supabaseClient'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
@@ -6,6 +7,18 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [rows, setRows] = useState(null)
+  const [dbError, setDbError] = useState(null)
+
+  // Supabase connection test: reads all rows from the `test` table
+  useEffect(() => {
+    supabase.from('test').select('*').then(({ data, error }) => {
+      console.log('supabase data:', data)
+      console.log('supabase error:', error)
+      if (error) setDbError(error.message)
+      else setRows(data)
+    })
+  }, [])
 
   return (
     <>
@@ -28,6 +41,12 @@ function App() {
         >
           Count is {count}
         </button>
+        <div>
+          <h2>Supabase test</h2>
+          {dbError && <p>Error: {dbError}</p>}
+          {!dbError && rows === null && <p>Loading...</p>}
+          {rows && <pre>{JSON.stringify(rows, null, 2)}</pre>}
+        </div>
       </section>
 
       <div className="ticks"></div>
