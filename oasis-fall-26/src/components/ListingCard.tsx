@@ -25,6 +25,8 @@ export function ListingCard({ listing, score }: { listing: ListingSummary; score
       <p className="mt-1 text-sm text-slate-600">
         {formatRent(listing.rent_per_room)} per room · {listing.open_rooms} of {listing.total_bedrooms}{' '}
         rooms open
+        {listing.utilities_included && ' · Utilities included'}
+        {listing.furnished && ' · Furnished'}
       </p>
     </Link>
   )
