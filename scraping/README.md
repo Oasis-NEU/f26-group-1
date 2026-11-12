@@ -6,7 +6,7 @@ Nothing here runs in the app. Output is a draft the team reviews before it goes 
 ## One command: update the website's building data
 
 ```sh
-python3 update_site_data.py                    # first run ~1.5–2 h (city data), cached after
+python3 update_site_data.py                    # first run ~30 min, cached after
 python3 update_site_data.py --offline          # after editing overrides.csv: no fetching, seconds
 python3 update_site_data.py --only van-ness,lightview
 ```
@@ -42,7 +42,7 @@ every building in `../oasis-fall-26/nusublet_buildings.json`. Standard library o
 `boston_open_data.py` for city data, walk times and nearby places.
 
 ```sh
-python3 building_specs.py all                         # fetch + extract + build (first run ~1.5–2 h, cached after)
+python3 building_specs.py all                         # fetch + extract + build (first run ~30 min, cached after)
 python3 building_specs.py fetch                       # official pages -> output/specs/pages/ (~10 min)
 python3 building_specs.py extract                     # pages + rate chart + city data -> facts.jsonl
 python3 building_specs.py build                       # facts + overrides -> clean dataset + review sheets
@@ -131,9 +131,10 @@ python3 find_candidates.py --named-only                       # ~58 named buildi
 
 ## Boston open data (`boston_open_data.py`)
 
-Needs Python 3.10+ and nothing else (standard library only). No API keys required; an optional
-free `MBTA_API_KEY` in `.env` (see `.env.example`) speeds up long lists. The first run takes
-about 30–40 seconds per building; reruns use the cache and finish instantly.
+Needs Python 3.10+ and nothing else (standard library only). No API keys required (an optional
+free `MBTA_API_KEY` in `.env` is used if present; see `.env.example`). The first run takes
+about 10 seconds per building, plus about a minute once for the shop lookup that covers
+the whole area around campus. Reruns use the cache and finish instantly.
 
 ```sh
 cd scraping

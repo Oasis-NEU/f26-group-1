@@ -10,7 +10,7 @@ oasis-fall-26/nusublet_buildings.json and writes one SQL file that the website r
 Only verified values go into the SQL. Nothing is written to Supabase: review the output, then
 load output/specs/building_specs.sql yourself (see the steps printed at the end).
 
-    python3 update_site_data.py                     # first run ~1.5-2 h, cached after
+    python3 update_site_data.py                     # first run ~30 min, cached after
     python3 update_site_data.py --offline           # reuse saved pages, don't fetch sites
     python3 update_site_data.py --only van-ness,lightview
     python3 update_site_data.py --skip-open-data    # fast: no city data, walk times, nearby places

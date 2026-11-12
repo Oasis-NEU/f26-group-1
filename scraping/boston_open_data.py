@@ -81,6 +81,11 @@ RENOVATION_WORK = {"INTREN", "INTEXT", "EXTREN", "ROOF", "ADDITION", "INTDEM", "
 NOTABLE_PERMIT_VALUE = 25_000  # dollars; smaller jobs are listed in the counts only
 
 NEARBY_RADIUS_M = 1000  # search radius for T stations, shops and docks
+# Shops are fetched once for this circle around campus, not once per building (Overpass is
+# slow and rate-limited). Buildings whose search radius reaches past it get their own query.
+AREA_RADIUS_M = 6000
+MIN_GAP_S = 0.5  # minimum time between two requests to the same host
+_last_request: dict[str, float] = {}
 # A shop=laundry in OpenStreetMap is often a dry cleaner; skip names like these.
 NOT_A_LAUNDROMAT = re.compile(r"clean|dry|tailor|alteration", re.IGNORECASE)
 
@@ -151,11 +156,17 @@ def fetch_json(url: str, headers: dict[str, str] | None = None) -> Any:
     path = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".json")
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))
+    host = urllib.parse.urlparse(url).netloc
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
     for attempt in range(4):
+        # Be polite to free public services: at least MIN_GAP_S between requests to one host.
+        wait = _last_request.get(host, 0.0) + MIN_GAP_S - time.monotonic()
+        if wait > 0:
+            time.sleep(wait)
         try:
-            with _OPENER.open(req, timeout=60) as resp:
+            with _OPENER.open(req, timeout=180) as resp:
                 data = json.load(resp)
+            _last_request[host] = time.monotonic()
             break
         except urllib.error.HTTPError as err:
             if (err.code != 429 and err.code < 500) or attempt == 3:
@@ -165,7 +176,6 @@ def fetch_json(url: str, headers: dict[str, str] | None = None) -> Any:
                   f"retrying in {wait}s)", file=sys.stderr)
             time.sleep(wait)
     path.write_text(json.dumps(data), encoding="utf-8")
-    time.sleep(0.5)  # be polite to free public services
     return data
 
 
@@ -342,7 +352,8 @@ def distance_m(lon1: float, lat1: float, lon2: float, lat2: float) -> int:
 
 
 def walk_minutes(start: tuple[float, float], end: tuple[float, float] = CAMPUS) -> int | None:
-    """Walking time along streets, from OSRM's foot profile. Points are (lon, lat)."""
+    """Walking time along streets, from OSRM's foot profile. Points are (lon, lat).
+    One route per request: the public server's table service is ~30x slower."""
     coords = f"{start[0]},{start[1]};{end[0]},{end[1]}"
     data = fetch_json(f"{OSRM_FOOT}/{coords}?overview=false")
     if data.get("code") != "Ok":
@@ -352,11 +363,8 @@ def walk_minutes(start: tuple[float, float], end: tuple[float, float] = CAMPUS) 
 
 def nearby_stations(lon: float, lat: float) -> list[Row]:
     """Subway and Green Line stations within NEARBY_RADIUS_M, nearest first."""
-    params = {
-        "filter[latitude]": lat, "filter[longitude]": lon,
-        "filter[radius]": NEARBY_RADIUS_M / 111_000 * 1.5,  # degrees; trimmed by distance below
-        "filter[route_type]": "0,1", "include": "parent_station",
-    }
+    # Every subway and light rail stop, fetched once (cached) and filtered by distance here.
+    params = {"filter[route_type]": "0,1", "include": "parent_station"}
     key = os.environ.get("MBTA_API_KEY")
     data = fetch_json(MBTA_STOPS + "?" + urllib.parse.urlencode(params),
                       headers={"x-api-key": key} if key else None)
@@ -370,11 +378,13 @@ def nearby_stations(lon: float, lat: float) -> list[Row]:
         parts = (attrs.get("description") or "").split(" - ")
         line = parts[1] if len(parts) > 1 else ""
         branches = re.findall(r"\(([A-E])\)", attrs.get("description") or "")
+        d = distance_m(lon, lat, attrs["longitude"], attrs["latitude"])
         station = stations.setdefault(station_id, {
             "name": names.get(station_id, attrs["name"]), "lines": set(), "branches": set(),
-            "lon": attrs["longitude"], "lat": attrs["latitude"],
-            "distance_m": distance_m(lon, lat, attrs["longitude"], attrs["latitude"]),
+            "distance_m": d + 1,
         })
+        if d < station["distance_m"]:  # measure to the station's nearest platform
+            station.update(lon=attrs["longitude"], lat=attrs["latitude"], distance_m=d)
         if line:
             station["lines"].add(line)
         station["branches"].update(branches)
@@ -390,18 +400,18 @@ def nearby_stations(lon: float, lat: float) -> list[Row]:
     return result
 
 
-def nearby_places(lon: float, lat: float) -> dict[str, list[Row]]:
-    """Laundromats, supermarkets and pharmacies from OpenStreetMap, nearest first."""
-    around = f"(around:{NEARBY_RADIUS_M},{lat},{lon})"
+def _overpass_places(lon: float, lat: float, radius_m: int) -> list[Row]:
+    """Laundromats, supermarkets and pharmacies within radius_m, from one Overpass query."""
+    around = f"(around:{radius_m},{lat},{lon})"
     query = (
-        "[out:json][timeout:25];("
+        "[out:json][timeout:120];("
         f'nwr["shop"="laundry"]{around};'
         f'nwr["shop"="supermarket"]{around};'
         f'nwr["amenity"="pharmacy"]{around};'
         ");out tags center;"
     )
     data = fetch_json(OVERPASS + "?" + urllib.parse.urlencode({"data": query}))
-    places: dict[str, list[Row]] = {"laundromats": [], "supermarkets": [], "pharmacies": []}
+    places = []
     for el in data["elements"]:
         tags = el.get("tags", {})
         point = el.get("center", el)
@@ -416,8 +426,23 @@ def nearby_places(lon: float, lat: float) -> dict[str, list[Row]]:
             kind = "supermarkets"
         else:
             kind = "pharmacies"
-        places[kind].append({"name": name, "lon": point["lon"], "lat": point["lat"],
-                             "distance_m": distance_m(lon, lat, point["lon"], point["lat"])})
+        places.append({"kind": kind, "name": name, "lon": point["lon"], "lat": point["lat"]})
+    return places
+
+
+def nearby_places(lon: float, lat: float) -> dict[str, list[Row]]:
+    """Laundromats, supermarkets and pharmacies from OpenStreetMap, nearest first.
+    Uses one cached query for the whole area around campus when it covers this point."""
+    if distance_m(lon, lat, *CAMPUS) + NEARBY_RADIUS_M <= AREA_RADIUS_M:
+        candidates = _overpass_places(*CAMPUS, AREA_RADIUS_M)
+    else:
+        candidates = _overpass_places(lon, lat, NEARBY_RADIUS_M)
+    places: dict[str, list[Row]] = {"laundromats": [], "supermarkets": [], "pharmacies": []}
+    for p in candidates:
+        d = distance_m(lon, lat, p["lon"], p["lat"])
+        if d <= NEARBY_RADIUS_M:
+            places[p["kind"]].append({"name": p["name"], "lon": p["lon"], "lat": p["lat"],
+                                      "distance_m": d})
     for found in places.values():
         found.sort(key=lambda p: p["distance_m"])
     return places
