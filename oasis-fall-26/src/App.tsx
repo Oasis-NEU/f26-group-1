@@ -5,6 +5,7 @@ import { Loading } from './components/ui'
 import { useAuth } from './lib/auth'
 import { BuildingDetailPage } from './pages/BuildingDetailPage'
 import { BuildingsPage } from './pages/BuildingsPage'
+import { EditListingPage } from './pages/EditListingPage'
 import { ListingDetailPage } from './pages/ListingDetailPage'
 import { ListingsPage } from './pages/ListingsPage'
 import { LoginPage } from './pages/LoginPage'
@@ -40,6 +41,7 @@ export default function App() {
               <Route index element={<ListingsPage />} />
               <Route path="listings/new" element={<NewListingPage />} />
               <Route path="listings/:id" element={<ListingDetailPage />} />
+              <Route path="listings/:id/edit" element={<EditListingPage />} />
               <Route path="seeking" element={<SeekingPage />} />
               <Route path="buildings" element={<BuildingsPage />} />
               <Route path="buildings/:id" element={<BuildingDetailPage />} />

@@ -52,28 +52,28 @@ insert into public.lifestyle (user_id, sleep, cleanliness, guests, noise, smokes
 -- Buildings (fictional placeholders; replace with the team's real list) -----
 
 insert into public.buildings (
-  id, name, neighborhood, management_company, walk_minutes_to_campus, rent_range,
+  id, name, neighborhood, address, management_company, walk_minutes_to_campus, rent_range,
   laundry, heat_ac, amenities, summary, sources
 )
 overriding system value
 values
-  (1, 'Fenway Commons (sample)', 'Fenway', 'Sample Property Co.', 8, '$1,100–$1,400/room',
+  (1, 'Fenway Commons (sample)', 'Fenway', '100 Sample St, Boston, MA 02115', 'Sample Property Co.', 8, '$1,100–$1,400/room',
    'In-building', 'Heat included, window AC', '{bike room,elevator}',
    'Fictional building for local development.',
    '[{"title": "Example source", "url": "https://example.com/fenway-commons"}]'),
-  (2, 'Mission Hill Lofts (sample)', 'Mission Hill', 'Sample Realty', 12, '$950–$1,250/room',
+  (2, 'Mission Hill Lofts (sample)', 'Mission Hill', '200 Example Ave, Boston, MA 02120', 'Sample Realty', 12, '$950–$1,250/room',
    'Coin-op in basement', 'Radiator heat, no AC', '{}',
    'Fictional building for local development.', '[]'),
-  (3, 'Back Bay Towers (sample)', 'Back Bay', 'Example Management', 15, '$1,500–$1,900/room',
+  (3, 'Back Bay Towers (sample)', 'Back Bay', '300 Placeholder Rd, Boston, MA 02116', 'Example Management', 15, '$1,500–$1,900/room',
    'In-unit', 'Central heat and AC', '{gym,doorman,elevator}',
    'Fictional building for local development.', '[]'),
-  (4, 'South End Row (sample)', 'South End', null, 18, '$1,300–$1,600/room',
+  (4, 'South End Row (sample)', 'South End', '400 Fictional Pl, Boston, MA 02118', null, 18, '$1,300–$1,600/room',
    'Laundromat nearby', 'Heat included', '{roof deck}',
    'Fictional building for local development.', '[]'),
-  (5, 'Roxbury Crossing Flats (sample)', 'Roxbury', 'Sample Property Co.', 10, '$850–$1,100/room',
+  (5, 'Roxbury Crossing Flats (sample)', 'Roxbury', '500 Demo St, Boston, MA 02120', 'Sample Property Co.', 10, '$850–$1,100/room',
    'In-building', 'Heat included, no AC', '{}',
    'Fictional building for local development.', '[]'),
-  (6, 'Symphony Place (sample)', 'Symphony', 'Example Management', 5, '$1,200–$1,500/room',
+  (6, 'Symphony Place (sample)', 'Symphony', '600 Test Ave, Boston, MA 02115', 'Example Management', 5, '$1,200–$1,500/room',
    'In-building', 'Central heat and AC', '{elevator}',
    'Fictional building for local development.', '[]');
 
@@ -135,3 +135,16 @@ insert into public.seeker_posts (
 
 insert into public.reports (listing_id, reporter_id, reason, note) values
   (2, '33333333-3333-4333-8333-333333333333', 'out_of_date', 'Owner said it was taken.');
+
+-- Map pins for the sample buildings: rough points in each neighborhood, not real buildings.
+-- Symphony Place is left without coordinates so the "no pin" case shows up locally.
+update public.buildings as b
+set latitude = c.lat, longitude = c.lng
+from (values
+  (1, 42.3445, -71.0990),
+  (2, 42.3330, -71.1040),
+  (3, 42.3505, -71.0810),
+  (4, 42.3420, -71.0720),
+  (5, 42.3315, -71.0950)
+) as c (id, lat, lng)
+where b.id = c.id;

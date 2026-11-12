@@ -1,10 +1,11 @@
 CLAUDE.md — NUSublet backend
 What this is
-NUSublet helps Northeastern students fill empty rooms in an existing lease when roommates leave for co-op or summer. Seekers (students back for co-op, summer classes, internships) find rooms whose dates actually line up. Each building gets a housing info page summarizing what students say about it.
+NUSublet helps Northeastern students fill empty rooms in an existing lease when roommates leave for co-op or summer. Seekers (students back for co-op, summer classes, internships) find rooms whose dates actually line up. A building database gives each off-campus building near campus an info page so students can research it before signing.
 This file covers the backend (Supabase). The frontend is a React SPA that talks to Supabase directly from the browser, so Row Level Security is the backend. There is no app server.
 MVP scope — build only this
 Profiles (name, year, major, short bio) + optional lifestyle answers.
 Listings: neighborhood, total/open rooms, exact dates, rent per room, fill-by date, photos, roommates who are staying, link to a building.
+Listing editing: the poster of a listing can edit it after posting (including linking or changing its building), not just change its status.
 Seeker posts: dates, reason (co-op / summer classes / internship / other), budget, neighborhoods.
 Date-first matching: only overlapping dates; rank by date fit > budget > neighborhood
 
@@ -13,7 +14,7 @@ Date-first matching: only overlapping dates; rank by date fit > budget > neighbo
 
 
 Reports: flag a listing as out of date (or other issue).
-Building pages: one per building/complex, team-written.
+Building database: one page per off-campus building/complex, filled from scraped data, linking to its open sublets (see "Building database plan").
 Out of scope for now — do not build, scaffold, or add tables for: pairs/group applications, messaging/chat, applications + accept/decline flow, exact-address reveal, notifications, email, blocking. If a task seems to need one of these, stop and ask.
 Stack
 Frontend: React + Vite + TypeScript + Tailwind (separate concern; see src/).
@@ -43,7 +44,7 @@ The browser only ever has VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY. Anything
 .env*.local is in .gitignore. Never commit keys.
 Every table has RLS enabled in the same migration that creates it. A table without policies is a bug.
 Default to security invoker for SQL functions so RLS still applies. Use security definer only when necessary, and then set search_path = '', fully qualify names (public.listings), and check auth.uid() yourself.
-Don't store exact street addresses, phone numbers, or ID documents in the MVP. Listings show neighborhood + building only.
+Don't store phone numbers or ID documents in the MVP. Listings show neighborhood + building only.
 Validate in the database (check constraints), not just in forms.
 Auth
 TEMPORARY (Oct 2026): sign-in is Supabase anonymous auth (signInAnonymously) while email delivery is unsolved. Users type their email into profiles.email (unverified, check-constrained to @northeastern.edu). Don't build features that rely on a verified email. When restoring magic links, re-enable the LoginPage OTP flow from git history, turn off anonymous sign-ins, and drop/replace profiles.email.
@@ -54,7 +55,7 @@ Data model
 Use bigint generated always as identity for ids, uuid for user ids (references auth.users), timestamptz default now() for timestamps, and money as whole dollars per month (integer).
 profiles — id uuid pk → auth.users on delete cascade, full_name text not null, year, major, bio (≤500 chars), school text not null default 'Northeastern', created_at.
 lifestyle — user_id pk → profiles, sleep, cleanliness, guests, noise (each smallint 1–5), smokes bool, has_pets bool, dealbreakers text[]. Optional for users; matching must work when it's missing.
-buildings — name, neighborhood, management_company, walk_minutes_to_campus, rent_range text, laundry text, heat_ac text, amenities text[], summary text, sources jsonb ([{"title","url"}]), updated_at date. Team-maintained through the dashboard; users can't write.
+buildings — name, neighborhood, address (≤200 chars, nullable), latitude/longitude (double precision, both set or both null), management_company, walk_minutes_to_campus, rent_range text, laundry text, heat_ac text, amenities text[], summary text, sources jsonb ([{"title","url"}]), updated_at date. Team-maintained through the dashboard; users can't write.
 listings — owner_id → profiles, title, neighborhood, building_id → buildings (on delete set null), total_bedrooms (1–10), open_rooms, rent_per_room (>0), utilities_included, furnished, start_date, end_date, fill_by, description (≤2000), status listing_status ('open','filled','closed'), created_at, updated_at. Checks: end_date > start_date, open_rooms between 0 and total_bedrooms, status <> 'open' or open_rooms >= 1. Owners mark listings filled themselves.
 listing_photos — listing_id → listings on delete cascade, path, position. Max 8 per listing (enforce with a trigger or check in the insert path).
 listing_roommates — listing_id → listings on delete cascade, user_id → profiles (nullable, on delete set null), display_name, note. Roommates may not have accounts; the UI should remind owners to get their OK before listing them.
@@ -149,9 +150,19 @@ Scheduled job (pg_cron)
 Daily at 08:00:
 listings → closed when status = 'open' and end_date < current_date, or fill_by < current_date - 7.
 seeker_posts → paused when status = 'active' and start_date < current_date - 14.
-Building pages content rules
-Summaries are written in the team's own words. Never paste Reddit comments or review text into summary; link originals in sources.
-Start with the 15–20 most-mentioned buildings; seed them in seed.sql for local dev.
+Building database plan
+Goal: set NUSublet apart from other sublet sites. Students can look up off-campus buildings near campus before signing a lease, even when no sublets are open there.
+Scope: off-campus housing only. No Northeastern dorms.
+Data source: scraped from the web. Students don't contribute: no reviews, ratings, or edits. Users can't write to buildings; only the team, the dashboard, or a service-role scraper can.
+Scraping: may run automatically on a schedule (not decided yet). A scraper needs the service-role key, so it runs outside src/ (e.g. an Edge Function or a script). Every scraped fact keeps its origin in sources, and updated_at shows when it was last refreshed.
+Summaries: written in our own words. Never paste scraped review or Reddit text into summary; link the originals in sources.
+Addresses: buildings may store a street address now that the no-address rule has been removed. Listings still show only neighborhood + building.
+Map: the buildings page is a list on the left and one map on the right (stacked on phones), with a clickable pin per building that has coordinates. Leaflet + OpenStreetMap tiles, no API key, lazy-loaded on that page only. Coordinates are looked up once from the address (scraper or dashboard), never geocoded in the browser. If traffic grows past OSM's free-tile policy, switch the tile URL to a hosted provider.
+Rent range: scraped, or calculated from our own listings' rent_per_room.
+Listings ↔ buildings: when creating a listing, the owner picks a building from the database or "Other" (building_id null). A listing for a building not in the database stays unlinked: it never creates a building row and is never linked automatically. If that building is added to the database later, the owner may edit the listing to link it; this is their choice. The building page shows that building's open listings.
+V1 (must ship): building info pages (list + detail) and links to active sublets on each building page.
+TBD (ask before building): which features/amenities to track, whether features are structured (filterable) or free text, buildings-page filters/sorting, scraping schedule.
+Seed the 15–20 most-mentioned buildings in seed.sql for local dev.
 Open decisions (ask before assuming)
 Contact: with no messaging, how does a seeker reach a lister? (e.g. show the owner's Northeastern email to logged-in users, or an owner-chosen contact field on the listing.)
 Whether building pages should be visible before login.
@@ -163,5 +174,5 @@ When adding a table, add its RLS policies and a pgTAP test in the same change.
 Prefer constraints and SQL functions over client-side logic for anything that must be true.
 If a request touches out-of-scope features, say so instead of building it.
 
-
+DO NOT CO-AUTHOR COMMITS.
 

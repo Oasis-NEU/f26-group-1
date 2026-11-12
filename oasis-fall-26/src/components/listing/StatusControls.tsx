@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router'
 import { supabase } from '../../lib/supabase'
 import type { Enums, Tables } from '../../types/database'
 import { Button, Card, ErrorMessage } from '../ui'
@@ -30,6 +31,12 @@ export function StatusControls({ listing, onChange }: Props) {
           : 'This listing is hidden from other students.'}
       </p>
       <div className="flex flex-wrap gap-2">
+        <Link
+          to={`/listings/${listing.id}/edit`}
+          className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50"
+        >
+          Edit details
+        </Link>
         {listing.status === 'open' ? (
           <>
             <Button disabled={busy} onClick={() => setStatus('filled')}>
