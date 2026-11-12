@@ -3,6 +3,27 @@
 Scripts that gather public data for the building info pages (`public.buildings`).
 Nothing here runs in the app. Output is a draft the team reviews before it goes into `seed.sql`.
 
+## One command: update the website's building data
+
+```sh
+python3 update_site_data.py                    # first run ~1.5–2 h (city data), cached after
+python3 update_site_data.py --offline          # after editing overrides.csv: no fetching, seconds
+python3 update_site_data.py --only van-ness,lightview
+```
+
+This runs `building_specs.py` end to end for every building in `nusublet_buildings.json` and
+writes `output/specs/building_specs.sql`, which:
+
+- adds buildings that `public.buildings` doesn't have yet (by slug, or linked by name),
+- fills **empty** building page columns from verified data: walk time, rent range, laundry,
+  heat/AC, management, amenities, sources. A value the team already entered is never overwritten;
+  to refresh one, clear it in the dashboard and load again,
+- replaces each building's row in `public.building_specs` (the compare page).
+
+It never connects to Supabase. When it finishes, it prints how many buildings each page column
+will fill, what to review, and how to load the file (psql or the SQL editor). The steps below
+explain each part.
+
 ## Workflow
 
 1. `find_candidates.py` builds a long list of rental buildings near campus.
@@ -10,6 +31,80 @@ Nothing here runs in the app. Output is a draft the team reviews before it goes 
 3. The team picks 15–20, fixes names/aliases, and copies those rows into `buildings.csv`.
 4. `boston_open_data.py` fills in city data, walk times and nearby amenities for those buildings.
 5. The team reads the Reddit threads and reviews, writes summaries, and moves the reviewed SQL into `seed.sql`.
+
+For the comparison page, `building_specs.py` works from `nusublet_buildings.json` instead of
+`buildings.csv`; see [Comparison specs](#comparison-specs-building_specspy).
+
+## Comparison specs (`building_specs.py`)
+
+Builds the dataset behind the building comparison page (Apple-style "compare models" table) for
+every building in `../oasis-fall-26/nusublet_buildings.json`. Standard library only; reuses
+`boston_open_data.py` for city data, walk times and nearby places.
+
+```sh
+python3 building_specs.py all                         # fetch + extract + build (first run ~1.5–2 h, cached after)
+python3 building_specs.py fetch                       # official pages -> output/specs/pages/ (~10 min)
+python3 building_specs.py extract                     # pages + rate chart + city data -> facts.jsonl
+python3 building_specs.py build                       # facts + overrides -> clean dataset + review sheets
+python3 building_specs.py extract --skip-open-data    # fast: no city lookups
+python3 building_specs.py all --only stetson-hall-east,van-ness   # a few buildings
+```
+
+### Where values come from (most trusted first)
+
+| Source | What | How |
+|---|---|---|
+| `data/overrides.csv` | Anything the team checked by hand | Always wins |
+| `data/nu_rates_2026-27.csv` | Northeastern room rates per semester, by room type | Typed in from the [rate chart PDFs](https://housing.northeastern.edu/rates/) and checked against the PDF text. Redo each year. |
+| housing.northeastern.edu | Bedroom types, laundry, elevator, kitchen, A/C, security, furniture, address | Parsed from each hall's "Building Details" list |
+| Boston open data | Walk time, nearest T/supermarket/laundromat/pharmacy, Bluebikes, year built, heat/AC, 311 complaints, violations, permits | `boston_open_data.py`. Streets use the middle of the street. |
+| `nusublet_buildings.json` | Type, campus, neighborhood, style | As listed |
+| Official complex websites | Amenities (in-unit laundry, gym, parking, pets…) | Keyword match. Always **unverified** until someone checks it. |
+
+**Never fetched**: listing portals (apartments.com, homes.com, Redfin, Zillow, aptsearch, ForRent…).
+Their terms forbid scraping or they block bots. They appear in `manual_todo.csv` so someone can
+read them and record values by hand. Fetching honors robots.txt and its crawl delay (at least 3 s
+between requests to a site), and skips pages that redirect to a different site.
+
+### Output (`output/specs/`, gitignored)
+
+- `buildings_compare.json`: the clean dataset. One entry per building; `specs` maps each field in
+  `data/field_catalog.json` to `{value, source, url, status}`. A missing field means *unknown*.
+  Unverified values are left out unless you pass `--include-unverified`.
+- `review.csv`: every value with its source, the text it was based on (`evidence`) and any other
+  source that disagreed. Unverified rows come first.
+- `manual_todo.csv`: buildings whose page couldn't be fetched or whose address didn't match.
+- `coverage.csv`: how many fields each building has, to decide which ones the compare page offers.
+- `facts.jsonl`, `pages/`, `open_data.json`: intermediate files.
+
+### Review loop
+
+1. Read `review.csv` and `manual_todo.csv`.
+2. Add rows to `data/overrides.csv` (`building_id,field,value,source_title,source_url,note`):
+   - value `ACCEPT`: the scraped value is right; mark it verified.
+   - value `UNKNOWN`: the scraped value is wrong and there's nothing better; drop it.
+   - anything else replaces the value: `yes`/`no` for yes-or-no fields, `$1,850` for money,
+     `a; b` for lists, an enum key (`in_unit`) for choices. See `data/field_catalog.json`.
+3. Wrong address or website? Fix `nusublet_buildings.json` and rerun `extract`.
+4. `python3 building_specs.py build` (instant).
+
+### Loading into Supabase
+
+```sh
+python3 building_specs.py build --sql                    # specs for buildings that already have a slug
+python3 building_specs.py build --sql --with-buildings   # also link by name / add missing buildings
+```
+
+This writes `output/specs/building_specs.sql`. Read it, then run it in the Supabase SQL editor
+(production) or with `psql` against the local database. It replaces each building's row in
+`public.building_specs`, matched on `buildings.slug` (= the id in `nusublet_buildings.json`). The
+last query lists slugs that didn't load. The script never connects to Supabase itself.
+
+### Adding a field
+
+Add it to `data/field_catalog.json` (section, label, type, unit, `better`), teach `extract` where
+to find it (or fill it through overrides), and rerun. `build` refuses values that don't match the
+field's type.
 
 ## Candidate list (`find_candidates.py`)
 

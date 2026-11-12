@@ -14,6 +14,7 @@ Date-first matching: only overlapping dates; rank by date fit > budget > neighbo
 
 Reports: flag a listing as out of date (or other issue).
 Building pages: one per building/complex, team-written.
+Building comparison: 2–3 buildings side by side (cost, rooms, amenities, location, city records), Apple "compare models" style, from a scraped and team-reviewed dataset. Plan: ../ComparisonPlan.md.
 Out of scope for now — do not build, scaffold, or add tables for: pairs/group applications, messaging/chat, applications + accept/decline flow, exact-address reveal, notifications, email, blocking. If a task seems to need one of these, stop and ask.
 Stack
 Frontend: React + Vite + TypeScript + Tailwind (separate concern; see src/).
@@ -54,7 +55,8 @@ Data model
 Use bigint generated always as identity for ids, uuid for user ids (references auth.users), timestamptz default now() for timestamps, and money as whole dollars per month (integer).
 profiles — id uuid pk → auth.users on delete cascade, full_name text not null, year, major, bio (≤500 chars), school text not null default 'Northeastern', created_at.
 lifestyle — user_id pk → profiles, sleep, cleanliness, guests, noise (each smallint 1–5), smokes bool, has_pets bool, dealbreakers text[]. Optional for users; matching must work when it's missing.
-buildings — name, neighborhood, management_company, walk_minutes_to_campus, rent_range text, laundry text, heat_ac text, amenities text[], summary text, sources jsonb ([{"title","url"}]), updated_at date. Team-maintained through the dashboard; users can't write.
+buildings — name, neighborhood, management_company, walk_minutes_to_campus, rent_range text, laundry text, heat_ac text, amenities text[], summary text, sources jsonb ([{"title","url"}]), updated_at date, slug text unique (lowercase-dashed; same as the id in nusublet_buildings.json; nullable). Team-maintained through the dashboard; users can't write. The scraper's SQL may add rows (slug, name, neighborhood) and fill page columns that are still empty (management_company, walk_minutes_to_campus, rent_range, laundry, heat_ac, amenities, sources) from verified specs; it never overwrites a value the team entered (to refresh one, clear it and reload).
+building_specs — building_id pk → buildings on delete cascade, specs jsonb (object; every key is {"value", "source", "url"?, "status"}), catalog_version smallint, scraped_at date. Keys and value types are defined in scraping/data/field_catalog.json. Loaded only from the SQL that scraping/building_specs.py generates; replaced wholesale on each load. Missing key = unknown (show "—"), never false.
 listings — owner_id → profiles, title, neighborhood, building_id → buildings (on delete set null), total_bedrooms (1–10), open_rooms, rent_per_room (>0), utilities_included, furnished, start_date, end_date, fill_by, description (≤2000), status listing_status ('open','filled','closed'), created_at, updated_at. Checks: end_date > start_date, open_rooms between 0 and total_bedrooms, status <> 'open' or open_rooms >= 1. Owners mark listings filled themselves.
 listing_photos — listing_id → listings on delete cascade, path, position. Max 8 per listing (enforce with a trigger or check in the insert path).
 listing_roommates — listing_id → listings on delete cascade, user_id → profiles (nullable, on delete set null), display_name, note. Roommates may not have accounts; the UI should remind owners to get their OK before listing them.
@@ -72,6 +74,9 @@ own row only (auth.uid() = id / user_id)
 buildings
 any logged-in user
 nobody (team uses dashboard)
+building_specs
+any logged-in user
+nobody (loaded from generated SQL)
 listings
 status = 'open' or owner_id = auth.uid()
 owner only
@@ -149,6 +154,14 @@ Scheduled job (pg_cron)
 Daily at 08:00:
 listings → closed when status = 'open' and end_date < current_date, or fill_by < current_date - 7.
 seeker_posts → paused when status = 'active' and start_date < current_date - 14.
+Building data pipeline (../scraping/)
+Python scripts outside the app, run by hand. Nothing in src/ or Supabase scrapes, and the app never calls scraped sites. See ../scraping/README.md.
+update_site_data.py is the one command: it runs building_specs.py (fetch → extract → build) for every building in oasis-fall-26/nusublet_buildings.json and writes output/specs/building_specs.sql (same as build --sql --with-buildings). --offline skips fetching and reuses saved pages (seconds; use after editing overrides). The team reviews output/specs/review.csv and manual_todo.csv, records corrections in scraping/data/overrides.csv (in git), reruns, then loads output/specs/building_specs.sql (SQL editor in production, psql locally). The SQL adds missing buildings, fills empty building page columns, and replaces building_specs rows.
+The scraper never holds the service-role key and never writes to Supabase directly; it only generates SQL.
+scraping/data/field_catalog.json is the contract between the scraper and the compare page: sections, row order, labels, types, units, which way is "better". Add a comparison row there first.
+Allowed sources: Northeastern housing pages and rate charts, Boston open data, MBTA, OpenStreetMap, Bluebikes, and buildings' own websites (robots.txt and crawl delay honored). Never fetch listing portals (apartments.com, homes.com, Redfin, Zillow, aptsearch, ForRent…): their terms forbid it. Values from those are entered by hand in overrides.csv.
+Money in specs follows the data model: whole dollars, per month per person for the comparable rent fields (Northeastern semester rates ÷ 4). Keyword matches from marketing pages stay "unverified" and out of the loaded data until a person checks them.
+Specs never contain street addresses, Reddit text, or review text.
 Building pages content rules
 Summaries are written in the team's own words. Never paste Reddit comments or review text into summary; link originals in sources.
 Start with the 15–20 most-mentioned buildings; seed them in seed.sql for local dev.
