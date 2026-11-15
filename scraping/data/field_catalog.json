@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "about": "Rows of the building comparison table. building_specs.py only writes fields listed here and checks every value against its type. The app renders sections and rows in this order. 'better' tells the UI which way to highlight (lower/higher); null means no winner.",
+  "types": {
+    "text": "short string",
+    "int": "whole number, see unit",
+    "money": "whole US dollars (integer), see unit for the period",
+    "bool": "true / false; a missing key means unknown, never false",
+    "enum": "one of the keys in values",
+    "list": "array of short strings",
+    "places": "array of {name, detail?, walk_minutes?, distance_m}",
+    "rates": "array of {chart (upperclass|first_year), style, tier, room_type, semester_usd, accommodation_only}"
+  },
+  "sections": [
+    {
+      "key": "overview",
+      "label": "Overview",
+      "fields": [
+        {"key": "overview.kind", "label": "Type", "type": "enum",
+         "values": {"residence_hall": "Residence hall", "apartment_building": "Apartment building",
+                    "address": "Single address", "street": "Street (many buildings)", "planned": "Planned"}},
+        {"key": "overview.campus", "label": "Campus", "type": "enum",
+         "values": {"on": "Northeastern housing", "affiliated": "Northeastern-affiliated", "off": "Off campus"}},
+        {"key": "overview.housing_style", "label": "Style", "type": "enum",
+         "values": {"traditional": "Traditional (shared floor bathroom)", "suite": "Suite",
+                    "apartment": "Apartment"}},
+        {"key": "overview.neighborhood", "label": "Neighborhood", "type": "text"},
+        {"key": "overview.management", "label": "Managed by", "type": "text"},
+        {"key": "overview.year_built", "label": "Year built", "type": "int", "better": "higher"},
+        {"key": "overview.stories", "label": "Stories", "type": "int"},
+        {"key": "overview.city_land_use", "label": "City land-use class", "type": "text"}
+      ]
+    },
+    {
+      "key": "cost",
+      "label": "Cost",
+      "fields": [
+        {"key": "cost.rent_pp_month_min", "label": "Rent per person / month, from", "type": "money",
+         "unit": "USD/month", "better": "lower",
+         "note": "Northeastern rates are per semester; divided by 4 months. Spaces reserved for housing accommodations are left out."},
+        {"key": "cost.rent_pp_month_max", "label": "Rent per person / month, up to", "type": "money",
+         "unit": "USD/month", "better": "lower"},
+        {"key": "cost.nu_semester_min", "label": "Northeastern rate per semester, from", "type": "money",
+         "unit": "USD/semester", "better": "lower"},
+        {"key": "cost.nu_semester_max", "label": "Northeastern rate per semester, up to", "type": "money",
+         "unit": "USD/semester", "better": "lower"},
+        {"key": "cost.nu_rates", "label": "Rates by room type", "type": "rates"},
+        {"key": "cost.rate_year", "label": "Rates for", "type": "text"},
+        {"key": "cost.meal_plan", "label": "Meal plan", "type": "enum",
+         "values": {"required": "Required", "some": "Required in some rooms", "not_required": "Not required"},
+         "note": "For upperclass students. All first-year housing requires a meal plan."},
+        {"key": "cost.lease_type", "label": "Lease", "type": "enum",
+         "values": {"nu_housing": "Northeastern housing agreement", "individual": "Individual lease",
+                    "joint": "Joint lease"}},
+        {"key": "cost.utilities_included", "label": "Utilities included", "type": "enum",
+         "values": {"all": "All", "some": "Some", "none": "None"}},
+        {"key": "cost.internet_included", "label": "Internet included", "type": "bool", "better": "higher"},
+        {"key": "cost.broker_fee", "label": "Broker fee", "type": "bool", "better": "lower"},
+        {"key": "cost.parking_month", "label": "Parking / month", "type": "money", "unit": "USD/month",
+         "better": "lower"}
+      ]
+    },
+    {
+      "key": "unit",
+      "label": "Rooms",
+      "fields": [
+        {"key": "unit.bedroom_types", "label": "Bedroom types", "type": "list"},
+        {"key": "unit.apartment_sizes", "label": "Apartment sizes", "type": "text"},
+        {"key": "unit.bathroom", "label": "Bathroom", "type": "enum",
+         "values": {"in_unit": "In the apartment", "in_suite": "In the suite", "shared_floor": "Shared, on the floor"}},
+        {"key": "unit.kitchen", "label": "Kitchen", "type": "enum",
+         "values": {"full": "Full kitchen", "kitchenette": "Kitchenette", "none": "None"}},
+        {"key": "unit.kitchen_appliances", "label": "Kitchen appliances", "type": "list"},
+        {"key": "unit.furnished", "label": "Furnished", "type": "bool"},
+        {"key": "unit.ac", "label": "Air conditioning", "type": "enum",
+         "values": {"central": "Central", "unit": "Window / wall units", "none": "None"}},
+        {"key": "unit.heat", "label": "Heat", "type": "text"}
+      ]
+    },
+    {
+      "key": "amenities",
+      "label": "Building amenities",
+      "fields": [
+        {"key": "amenities.laundry", "label": "Laundry", "type": "enum", "better": "higher",
+         "values": {"in_unit": "In unit", "in_building": "In building", "none": "None"}},
+        {"key": "amenities.elevator", "label": "Elevator", "type": "bool", "better": "higher"},
+        {"key": "amenities.security", "label": "Security", "type": "enum",
+         "values": {"staffed_24h": "Staffed or secured 24 hours", "secured_entry": "Secured entry",
+                    "none": "None listed"}},
+        {"key": "amenities.fitness_center", "label": "Fitness center", "type": "bool", "better": "higher"},
+        {"key": "amenities.lounge", "label": "Lounge / study space", "type": "bool", "better": "higher"},
+        {"key": "amenities.dining_in_building", "label": "Dining hall in building", "type": "bool"},
+        {"key": "amenities.parking", "label": "Parking", "type": "bool", "better": "higher"},
+        {"key": "amenities.pets_allowed", "label": "Pets allowed", "type": "bool"},
+        {"key": "amenities.bike_storage", "label": "Bike storage", "type": "bool", "better": "higher"},
+        {"key": "amenities.package_room", "label": "Package room / lockers", "type": "bool", "better": "higher"},
+        {"key": "amenities.roof_deck", "label": "Roof deck / courtyard", "type": "bool"}
+      ]
+    },
+    {
+      "key": "location",
+      "label": "Location",
+      "fields": [
+        {"key": "location.walk_min_campus", "label": "Walk to campus", "type": "int", "unit": "min",
+         "better": "lower", "note": "Walking route to Curry Student Center (OpenStreetMap routing)."},
+        {"key": "location.t_stations", "label": "Nearest T", "type": "places"},
+        {"key": "location.supermarket", "label": "Nearest supermarket", "type": "places"},
+        {"key": "location.laundromat", "label": "Nearest laundromat", "type": "places"},
+        {"key": "location.pharmacy", "label": "Nearest pharmacy", "type": "places"},
+        {"key": "location.bluebikes_m", "label": "Nearest Bluebikes dock", "type": "int", "unit": "m",
+         "better": "lower"},
+        {"key": "location.basis", "label": "Measured from", "type": "enum",
+         "values": {"building": "The building", "street_midpoint": "Middle of the street"}}
+      ]
+    },
+    {
+      "key": "record",
+      "label": "City records",
+      "fields": [
+        {"key": "record.complaints_pests", "label": "Pest complaints (311, 2024 on)", "type": "int",
+         "better": "lower", "note": "Counts, not verdicts: bigger buildings get more."},
+        {"key": "record.complaints_heat", "label": "Heat complaints (311, 2024 on)", "type": "int",
+         "better": "lower"},
+        {"key": "record.complaints_conditions", "label": "Living-condition complaints (311, 2024 on)",
+         "type": "int", "better": "lower"},
+        {"key": "record.violations", "label": "Code violations since 2021", "type": "int", "better": "lower",
+         "note": "Includes permit and paperwork violations."},
+        {"key": "record.violations_open", "label": "Open violations", "type": "int", "better": "lower"},
+        {"key": "record.renovation_permits", "label": "Renovation permits since 2021", "type": "int"},
+        {"key": "record.last_major_renovation", "label": "Last renovation over $25k", "type": "text"}
+      ]
+    }
+  ]
+}
