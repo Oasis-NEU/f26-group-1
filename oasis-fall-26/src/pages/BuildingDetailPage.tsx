@@ -2,6 +2,7 @@ import { useCallback, type ReactNode } from 'react'
 import { Link, useParams } from 'react-router'
 import { ListingCard } from '../components/ListingCard'
 import { Card, ErrorMessage, Loading } from '../components/ui'
+import { compareHref } from '../lib/compare'
 import { formatDate, formatRent } from '../lib/format'
 import { LISTING_SUMMARY } from '../lib/listings'
 import { must, supabase } from '../lib/supabase'
@@ -23,8 +24,9 @@ function parseSources(sources: Json) {
 // Basic building template: only the core facts every building has. Feature fields
 // (laundry, heat_ac, amenities) stay in the database but aren't shown until the team
 // decides which features to track (see "Building database plan" in CLAUDE.md).
+// slug + building_specs decide whether the Compare button shows.
 const BUILDING_BASICS =
-  'id, name, neighborhood, address, management_company, walk_minutes_to_campus, rent_range, summary, sources, updated_at'
+  'id, slug, name, neighborhood, address, management_company, walk_minutes_to_campus, rent_range, summary, sources, updated_at, building_specs(building_id)'
 
 export function BuildingDetailPage() {
   const id = Number(useParams().id)
@@ -58,10 +60,20 @@ export function BuildingDetailPage() {
       <Link to="/buildings" className="text-sm text-slate-600 hover:text-slate-900">
         ← All buildings
       </Link>
-      <div>
-        <h1 className="text-2xl font-semibold">{building.name}</h1>
-        <p className="mt-1 text-slate-600">{building.neighborhood}</p>
-        {building.address && <p className="mt-0.5 text-sm text-slate-500">{building.address}</p>}
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-semibold">{building.name}</h1>
+          <p className="mt-1 text-slate-600">{building.neighborhood}</p>
+          {building.address && <p className="mt-0.5 text-sm text-slate-500">{building.address}</p>}
+        </div>
+        {building.slug && building.building_specs && (
+          <Link
+            to={compareHref([building.slug])}
+            className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50"
+          >
+            Compare with other buildings
+          </Link>
+        )}
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">

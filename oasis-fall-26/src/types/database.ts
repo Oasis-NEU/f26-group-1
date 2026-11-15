@@ -23,16 +23,36 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "buildings": {
+            "building_specs": {
                   Row: {
-                    "address": string | null,"amenities": (string)[],"heat_ac": string | null,"id": number,"latitude": number | null,"laundry": string | null,"longitude": number | null,"management_company": string | null,"name": string,"neighborhood": string,"rent_range": string | null,"sources": NonNullable<Json>,"summary": string | null,"updated_at": string,"walk_minutes_to_campus": number | null
+                    "building_id": number,"catalog_version": number,"scraped_at": string,"specs": NonNullable<Json>
                   }
                   ComputedFields: never
                   Insert: {
-                    "address"?: string | null,"amenities"?: (string)[],"heat_ac"?: string | null,"id"?: never,"latitude"?: number | null,"laundry"?: string | null,"longitude"?: number | null,"management_company"?: string | null,"name": string,"neighborhood": string,"rent_range"?: string | null,"sources"?: NonNullable<Json>,"summary"?: string | null,"updated_at"?: string,"walk_minutes_to_campus"?: number | null
+                    "building_id": number,"catalog_version": number,"scraped_at": string,"specs"?: NonNullable<Json>
                   }
                   Update: {
-                    "address"?: string | null,"amenities"?: (string)[],"heat_ac"?: string | null,"id"?: never,"latitude"?: number | null,"laundry"?: string | null,"longitude"?: number | null,"management_company"?: string | null,"name"?: string,"neighborhood"?: string,"rent_range"?: string | null,"sources"?: NonNullable<Json>,"summary"?: string | null,"updated_at"?: string,"walk_minutes_to_campus"?: number | null
+                    "building_id"?: number,"catalog_version"?: number,"scraped_at"?: string,"specs"?: NonNullable<Json>
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "building_specs_building_id_fkey"
+      columns: ["building_id"]
+isOneToOne: true
+      referencedRelation: "buildings"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"buildings": {
+                  Row: {
+                    "address": string | null,"amenities": (string)[],"heat_ac": string | null,"id": number,"latitude": number | null,"laundry": string | null,"longitude": number | null,"management_company": string | null,"name": string,"neighborhood": string,"rent_range": string | null,"slug": string | null,"sources": NonNullable<Json>,"summary": string | null,"updated_at": string,"walk_minutes_to_campus": number | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "address"?: string | null,"amenities"?: (string)[],"heat_ac"?: string | null,"id"?: never,"latitude"?: number | null,"laundry"?: string | null,"longitude"?: number | null,"management_company"?: string | null,"name": string,"neighborhood": string,"rent_range"?: string | null,"slug"?: string | null,"sources"?: NonNullable<Json>,"summary"?: string | null,"updated_at"?: string,"walk_minutes_to_campus"?: number | null
+                  }
+                  Update: {
+                    "address"?: string | null,"amenities"?: (string)[],"heat_ac"?: string | null,"id"?: never,"latitude"?: number | null,"laundry"?: string | null,"longitude"?: number | null,"management_company"?: string | null,"name"?: string,"neighborhood"?: string,"rent_range"?: string | null,"slug"?: string | null,"sources"?: NonNullable<Json>,"summary"?: string | null,"updated_at"?: string,"walk_minutes_to_campus"?: number | null
                   }
                   Relationships: [
                     

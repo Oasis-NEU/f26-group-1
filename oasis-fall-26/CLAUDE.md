@@ -14,7 +14,8 @@ Date-first matching: only overlapping dates; rank by date fit > budget > neighbo
 
 
 Reports: flag a listing as out of date (or other issue).
-Building database: one page per off-campus building/complex, filled from scraped data, linking to its open sublets (see "Building database plan").
+Building pages: one per building/complex, filled from scraped data, linking to its open sublets (see "Building database plan").
+Building comparison: 2–3 buildings side by side (cost, rooms, amenities, location, city records), Apple "compare models" style, from a scraped and team-reviewed dataset. Plan: ../ComparisonPlan.md.
 Out of scope for now — do not build, scaffold, or add tables for: pairs/group applications, messaging/chat, applications + accept/decline flow, exact-address reveal, notifications, email, blocking. If a task seems to need one of these, stop and ask.
 Stack
 Frontend: React + Vite + TypeScript + Tailwind (separate concern; see src/).
@@ -55,7 +56,8 @@ Data model
 Use bigint generated always as identity for ids, uuid for user ids (references auth.users), timestamptz default now() for timestamps, and money as whole dollars per month (integer).
 profiles — id uuid pk → auth.users on delete cascade, full_name text not null, year, major, bio (≤500 chars), school text not null default 'Northeastern', created_at.
 lifestyle — user_id pk → profiles, sleep, cleanliness, guests, noise (each smallint 1–5), smokes bool, has_pets bool, dealbreakers text[]. Optional for users; matching must work when it's missing.
-buildings — name, neighborhood, address (≤200 chars, nullable), latitude/longitude (double precision, both set or both null), management_company, walk_minutes_to_campus, rent_range text, laundry text, heat_ac text, amenities text[], summary text, sources jsonb ([{"title","url"}]), updated_at date. Team-maintained through the dashboard; users can't write.
+buildings — name, neighborhood, address (≤200 chars, nullable), latitude/longitude (double precision, both set or both null), management_company, walk_minutes_to_campus, rent_range text, laundry text, heat_ac text, amenities text[], summary text, sources jsonb ([{"title","url"}]), updated_at date, slug text unique (lowercase-dashed; same as the id in nusublet_buildings.json; nullable). Team-maintained through the dashboard; users can't write. The scraper's SQL may add rows (slug, name, neighborhood) and fill page columns that are still empty (management_company, walk_minutes_to_campus, rent_range, laundry, heat_ac, amenities, sources) from verified specs, and scraping/building_coordinates.py fills empty address/latitude/longitude; neither overwrites a value the team entered (to refresh one, clear it and reload).
+building_specs — building_id pk → buildings on delete cascade, specs jsonb (object; every key is {"value", "source", "url"?, "status"}), catalog_version smallint, scraped_at date. Keys and value types are defined in scraping/data/field_catalog.json. Loaded only from the SQL that scraping/building_specs.py generates; replaced wholesale on each load. Missing key = unknown (show "—"), never false.
 listings — owner_id → profiles, title, neighborhood, building_id → buildings (on delete set null), total_bedrooms (1–10), open_rooms, rent_per_room (>0), utilities_included, furnished, start_date, end_date, fill_by, description (≤2000), status listing_status ('open','filled','closed'), created_at, updated_at. Checks: end_date > start_date, open_rooms between 0 and total_bedrooms, status <> 'open' or open_rooms >= 1. Owners mark listings filled themselves.
 listing_photos — listing_id → listings on delete cascade, path, position. Max 8 per listing (enforce with a trigger or check in the insert path).
 listing_roommates — listing_id → listings on delete cascade, user_id → profiles (nullable, on delete set null), display_name, note. Roommates may not have accounts; the UI should remind owners to get their OK before listing them.
@@ -73,6 +75,9 @@ own row only (auth.uid() = id / user_id)
 buildings
 any logged-in user
 nobody (team uses dashboard)
+building_specs
+any logged-in user
+nobody (loaded from generated SQL)
 listings
 status = 'open' or owner_id = auth.uid()
 owner only
@@ -151,18 +156,26 @@ Daily at 08:00:
 listings → closed when status = 'open' and end_date < current_date, or fill_by < current_date - 7.
 seeker_posts → paused when status = 'active' and start_date < current_date - 14.
 Building database plan
-Goal: set NUSublet apart from other sublet sites. Students can look up off-campus buildings near campus before signing a lease, even when no sublets are open there.
-Scope: off-campus housing only. No Northeastern dorms.
-Data source: scraped from the web. Students don't contribute: no reviews, ratings, or edits. Users can't write to buildings; only the team, the dashboard, or a service-role scraper can.
-Scraping: may run automatically on a schedule (not decided yet). A scraper needs the service-role key, so it runs outside src/ (e.g. an Edge Function or a script). Every scraped fact keeps its origin in sources, and updated_at shows when it was last refreshed.
-Summaries: written in our own words. Never paste scraped review or Reddit text into summary; link the originals in sources.
+Goal: set NUSublet apart from other sublet sites. Students can look up buildings near campus (off-campus apartments and Northeastern residence halls, as listed in nusublet_buildings.json) before signing a lease, even when no sublets are open there.
+Students don't contribute building data: no reviews, ratings, or edits. Users can't write to buildings or building_specs; only the team (dashboard) or SQL generated by ../scraping/ changes them.
 Addresses: buildings may store a street address now that the no-address rule has been removed. Listings still show only neighborhood + building.
-Map: the buildings page is a list on the left and one map on the right (stacked on phones), with a clickable pin per building that has coordinates. Leaflet + OpenStreetMap tiles, no API key, lazy-loaded on that page only. Coordinates are looked up once from the address (scraper or dashboard), never geocoded in the browser. If traffic grows past OSM's free-tile policy, switch the tile URL to a hosted provider.
+Map: the buildings page is a list on the left and one map on the right (stacked on phones), with a clickable pin per building that has coordinates. Leaflet + OpenStreetMap tiles, no API key, lazy-loaded on that page only. Coordinates come from scraping/building_coordinates.py (or the dashboard), never geocoded in the browser. If traffic grows past OSM's free-tile policy, switch the tile URL to a hosted provider.
 Rent range: scraped, or calculated from our own listings' rent_per_room.
 Listings ↔ buildings: when creating a listing, the owner picks a building from the database or "Other" (building_id null). A listing for a building not in the database stays unlinked: it never creates a building row and is never linked automatically. If that building is added to the database later, the owner may edit the listing to link it; this is their choice. The building page shows that building's open listings.
 V1 (must ship): building info pages (list + detail) and links to active sublets on each building page.
-TBD (ask before building): which features/amenities to track, whether features are structured (filterable) or free text, buildings-page filters/sorting, scraping schedule.
-Seed the 15–20 most-mentioned buildings in seed.sql for local dev.
+TBD (ask before building): buildings-page filters/sorting.
+Building data pipeline (../scraping/)
+Python scripts outside the app, run by hand. Nothing in src/ or Supabase scrapes, and the app never calls scraped sites. See ../scraping/README.md.
+update_site_data.py is the one command: it runs building_specs.py (fetch → extract → build) for every building in oasis-fall-26/nusublet_buildings.json and writes output/specs/building_specs.sql (same as build --sql --with-buildings). --offline skips fetching and reuses saved pages (seconds; use after editing overrides). The team reviews output/specs/review.csv and manual_todo.csv, records corrections in scraping/data/overrides.csv (in git), reruns, then loads output/specs/building_specs.sql (SQL editor in production, psql locally). The SQL adds missing buildings, fills empty building page columns, and replaces building_specs rows.
+building_coordinates.py writes output/coordinates/building_coordinates.sql the same way: it fills empty address/latitude/longitude (Boston's address list, street midpoints, or an OpenStreetMap name search near campus) and lists matches to check in coordinates_review.csv.
+The scraper never holds the service-role key and never writes to Supabase directly; it only generates SQL.
+scraping/data/field_catalog.json is the contract between the scraper and the compare page: sections, row order, labels, types, units, which way is "better". Add a comparison row there first.
+Allowed sources: Northeastern housing pages and rate charts, Boston open data, MBTA, OpenStreetMap, Bluebikes, and buildings' own websites (robots.txt and crawl delay honored). Never fetch listing portals (apartments.com, homes.com, Redfin, Zillow, aptsearch, ForRent…): their terms forbid it. Values from those are entered by hand in overrides.csv.
+Money in specs follows the data model: whole dollars, per month per person for the comparable rent fields (Northeastern semester rates ÷ 4). Keyword matches from marketing pages stay "unverified" and out of the loaded data until a person checks them.
+Specs never contain street addresses, Reddit text, or review text.
+Building pages content rules
+Summaries are verbatim Reddit comments generated by scripts/reddit_buildings/ (team decision, Oct 2026). Never include usernames (the script scrubs authors, u/ mentions, emails, phone numbers); every quote's thread goes in sources. Re-run collect periodically so comments deleted on Reddit drop out.
+The script's discover step ranks the most-mentioned buildings/streets; start with the top 15–20. seed.sql keeps fictional buildings for local dev.
 Open decisions (ask before assuming)
 Contact: with no messaging, how does a seeker reach a lister? (e.g. show the owner's Northeastern email to logged-in users, or an owner-chosen contact field on the listing.)
 Whether building pages should be visible before login.

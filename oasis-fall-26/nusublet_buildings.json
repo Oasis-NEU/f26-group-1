@@ -1,0 +1,2437 @@
+[
+  {
+    "id": "stetson-hall-east",
+    "name": "Stetson Hall East",
+    "aliases": [
+      "Stetson East"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_traditional",
+    "website": "https://housing.northeastern.edu/stetson-hall-east/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Stetson+Hall+East%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Stetson Hall East\" Northeastern housing"
+  },
+  {
+    "id": "stetson-hall-west",
+    "name": "Stetson Hall West",
+    "aliases": [
+      "Stetson West"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_traditional",
+    "website": "https://housing.northeastern.edu/stetson-hall-west/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Stetson+Hall+West%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Stetson Hall West\" Northeastern housing"
+  },
+  {
+    "id": "speare-hall",
+    "name": "Speare Hall",
+    "aliases": [
+      "Speare"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_traditional",
+    "website": "https://housing.northeastern.edu/speare-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Speare+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Speare Hall\" Northeastern housing"
+  },
+  {
+    "id": "smith-hall",
+    "name": "Smith Hall",
+    "aliases": [],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_traditional",
+    "website": "https://housing.northeastern.edu/smith-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Smith+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Smith Hall\" Northeastern housing"
+  },
+  {
+    "id": "melvin-hall",
+    "name": "Melvin Hall",
+    "aliases": [
+      "Melvin"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_traditional",
+    "website": "https://housing.northeastern.edu/melvin-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Melvin+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Melvin Hall\" Northeastern housing"
+  },
+  {
+    "id": "light-hall",
+    "name": "Light Hall",
+    "aliases": [],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_traditional",
+    "website": "https://housing.northeastern.edu/light-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Light+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Light Hall\" Northeastern housing"
+  },
+  {
+    "id": "hastings-hall",
+    "name": "Hastings Hall",
+    "aliases": [
+      "Hastings"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_traditional",
+    "website": "https://housing.northeastern.edu/hastings-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Hastings+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Hastings Hall\" Northeastern housing"
+  },
+  {
+    "id": "kerr-hall",
+    "name": "Kerr Hall",
+    "aliases": [
+      "Kerr"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_traditional",
+    "website": "https://housing.northeastern.edu/kerr-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Kerr+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Kerr Hall\" Northeastern housing"
+  },
+  {
+    "id": "60-belvidere-street",
+    "name": "60 Belvidere Street",
+    "aliases": [
+      "60 Belvidere"
+    ],
+    "street_address": "60 Belvidere Street",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_suite",
+    "website": "https://housing.northeastern.edu/60belvidere/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=60+Belvidere+Street%2C+Boston%2C+MA",
+    "search_query": "\"60 Belvidere Street\" Northeastern housing"
+  },
+  {
+    "id": "kennedy-hall",
+    "name": "Kennedy Hall",
+    "aliases": [],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_suite",
+    "website": "https://housing.northeastern.edu/kennedy-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Kennedy+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Kennedy Hall\" Northeastern housing"
+  },
+  {
+    "id": "international-village",
+    "name": "International Village",
+    "aliases": [
+      "Intl Village"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_suite",
+    "website": "https://housing.northeastern.edu/international-village/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=International+Village%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"International Village\" Northeastern housing"
+  },
+  {
+    "id": "east-village",
+    "name": "East Village",
+    "aliases": [],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_suite",
+    "website": "https://housing.northeastern.edu/east-village/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=East+Village%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"East Village\" Northeastern housing"
+  },
+  {
+    "id": "153-hemenway-street",
+    "name": "153 Hemenway Street",
+    "aliases": [
+      "153 Hemenway"
+    ],
+    "street_address": "153 Hemenway Street",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_suite",
+    "website": "https://housing.northeastern.edu/153-hemenway-street/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=153+Hemenway+Street%2C+Boston%2C+MA",
+    "search_query": "\"153 Hemenway Street\" Northeastern housing"
+  },
+  {
+    "id": "burstein-hall",
+    "name": "Burstein Hall",
+    "aliases": [
+      "Burstein"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/burstein-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Burstein+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Burstein Hall\" Northeastern housing"
+  },
+  {
+    "id": "768-columbus",
+    "name": "768 Columbus",
+    "aliases": [
+      "768 Columbus Ave"
+    ],
+    "street_address": "768 Columbus",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/768-columbus/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=768+Columbus%2C+Boston%2C+MA",
+    "search_query": "\"768 Columbus\" Northeastern housing"
+  },
+  {
+    "id": "780-columbus",
+    "name": "780 Columbus",
+    "aliases": [
+      "780 Columbus Ave"
+    ],
+    "street_address": "780 Columbus",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/780-columbus/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=780+Columbus%2C+Boston%2C+MA",
+    "search_query": "\"780 Columbus\" Northeastern housing"
+  },
+  {
+    "id": "144-hemenway-st",
+    "name": "144 Hemenway St",
+    "aliases": [
+      "144 Hemenway"
+    ],
+    "street_address": "144 Hemenway St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/144-hemenway-st/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=144+Hemenway+St%2C+Boston%2C+MA",
+    "search_query": "\"144 Hemenway St\" Northeastern housing"
+  },
+  {
+    "id": "willis-hall",
+    "name": "Willis Hall",
+    "aliases": [
+      "Willis"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/willis-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Willis+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Willis Hall\" Northeastern housing"
+  },
+  {
+    "id": "west-village-a",
+    "name": "West Village A",
+    "aliases": [
+      "WVA"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/west-village-a/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=West+Village+A%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"West Village A\" Northeastern housing"
+  },
+  {
+    "id": "west-village-b",
+    "name": "West Village B",
+    "aliases": [
+      "WVB"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/west-village-b/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=West+Village+B%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"West Village B\" Northeastern housing"
+  },
+  {
+    "id": "west-village-c",
+    "name": "West Village C",
+    "aliases": [
+      "WVC"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/west-village-c/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=West+Village+C%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"West Village C\" Northeastern housing"
+  },
+  {
+    "id": "west-village-e",
+    "name": "West Village E",
+    "aliases": [
+      "WVE"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/west-village-e/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=West+Village+E%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"West Village E\" Northeastern housing"
+  },
+  {
+    "id": "west-village-f",
+    "name": "West Village F",
+    "aliases": [
+      "WVF"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/west-village-f/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=West+Village+F%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"West Village F\" Northeastern housing"
+  },
+  {
+    "id": "west-village-g",
+    "name": "West Village G",
+    "aliases": [
+      "WVG"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/west-village-g/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=West+Village+G%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"West Village G\" Northeastern housing"
+  },
+  {
+    "id": "west-village-h",
+    "name": "West Village H",
+    "aliases": [
+      "WVH"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/west-village-h/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=West+Village+H%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"West Village H\" Northeastern housing"
+  },
+  {
+    "id": "loftman-hall",
+    "name": "Loftman Hall",
+    "aliases": [
+      "Loftman"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/loftman-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Loftman+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Loftman Hall\" Northeastern housing"
+  },
+  {
+    "id": "rubenstein-hall",
+    "name": "Rubenstein Hall",
+    "aliases": [
+      "Rubenstein"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/rubenstein-hall/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Rubenstein+Hall%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Rubenstein Hall\" Northeastern housing"
+  },
+  {
+    "id": "davenport-commons",
+    "name": "Davenport Commons",
+    "aliases": [
+      "Davenport A",
+      "Davenport B"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/davenport-commons-a-b/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Davenport+Commons%2C+Northeastern+University%2C+Boston%2C+MA",
+    "search_query": "\"Davenport Commons\" Northeastern housing"
+  },
+  {
+    "id": "407-huntington-ave",
+    "name": "407 Huntington Ave",
+    "aliases": [
+      "407 Huntington"
+    ],
+    "street_address": "407 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/407-huntington-ave/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=407+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"407 Huntington Ave\" Northeastern housing"
+  },
+  {
+    "id": "337-huntington-ave",
+    "name": "337 Huntington Ave",
+    "aliases": [
+      "337 Huntington"
+    ],
+    "street_address": "337 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/337-huntington-ave/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=337+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"337 Huntington Ave\" Northeastern housing"
+  },
+  {
+    "id": "319-huntington-ave",
+    "name": "319 Huntington Ave",
+    "aliases": [
+      "319 Huntington"
+    ],
+    "street_address": "319 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/319-huntington-ave/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=319+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"319 Huntington Ave\" Northeastern housing"
+  },
+  {
+    "id": "122-st-stephen-street",
+    "name": "122 St. Stephen Street",
+    "aliases": [
+      "122 St Stephen"
+    ],
+    "street_address": "122 St. Stephen Street",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/122-st-stephen-street/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=122+St.+Stephen+Street%2C+Boston%2C+MA",
+    "search_query": "\"122 St. Stephen Street\" Northeastern housing"
+  },
+  {
+    "id": "116-st-stephen-street",
+    "name": "116 St. Stephen Street",
+    "aliases": [
+      "116 St Stephen"
+    ],
+    "street_address": "116 St. Stephen Street",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/116-st-stephen-street/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=116+St.+Stephen+Street%2C+Boston%2C+MA",
+    "search_query": "\"116 St. Stephen Street\" Northeastern housing"
+  },
+  {
+    "id": "110-st-stephen-street",
+    "name": "110 St. Stephen Street",
+    "aliases": [
+      "110 St Stephen"
+    ],
+    "street_address": "110 St. Stephen Street",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/110-st-stephen-street/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=110+St.+Stephen+Street%2C+Boston%2C+MA",
+    "search_query": "\"110 St. Stephen Street\" Northeastern housing"
+  },
+  {
+    "id": "106-st-stephen-street",
+    "name": "106 St. Stephen Street",
+    "aliases": [
+      "106 St Stephen"
+    ],
+    "street_address": "106 St. Stephen Street",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/106-st-stephen-street/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=106+St.+Stephen+Street%2C+Boston%2C+MA",
+    "search_query": "\"106 St. Stephen Street\" Northeastern housing"
+  },
+  {
+    "id": "10-coventry",
+    "name": "10 Coventry",
+    "aliases": [
+      "10 Coventry St"
+    ],
+    "street_address": "10 Coventry",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Northeastern campus",
+    "campus": "on",
+    "type": "residence_hall_apartment",
+    "website": "https://housing.northeastern.edu/10-coventry/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=10+Coventry%2C+Boston%2C+MA",
+    "search_query": "\"10 Coventry\" Northeastern housing"
+  },
+  {
+    "id": "fenway-triangle-trilogy",
+    "name": "Fenway Triangle Trilogy",
+    "aliases": [
+      "Trilogy Fenway",
+      "Fenway Triangle",
+      "Trilogy apartments"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://fenwaytriangle.com/about/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Fenway+Triangle+Trilogy%2C+Boston%2C+MA",
+    "search_query": "\"Fenway Triangle Trilogy\" Boston apartments"
+  },
+  {
+    "id": "1330-boylston",
+    "name": "1330 Boylston",
+    "aliases": [
+      "1330 Boylston St"
+    ],
+    "street_address": "1330 Boylston",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://thefenway.com/luxury-apartments/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1330+Boylston%2C+Boston%2C+MA",
+    "search_query": "\"1330 Boylston\" Boston apartments"
+  },
+  {
+    "id": "van-ness",
+    "name": "Van Ness",
+    "aliases": [
+      "1325 Boylston",
+      "Van Ness apartments"
+    ],
+    "street_address": "1325 Boylston",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://thefenway.com/luxury-apartments/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1325+Boylston%2C+Boston%2C+MA",
+    "search_query": "\"Van Ness\" Boston apartments"
+  },
+  {
+    "id": "the-viridian",
+    "name": "The Viridian",
+    "aliases": [
+      "Viridian",
+      "1282 Boylston"
+    ],
+    "street_address": "1282 Boylston",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://www.apartments.com/the-viridian-boston-ma/tejbnj9",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1282+Boylston%2C+Boston%2C+MA",
+    "search_query": "\"The Viridian\" Boston apartments"
+  },
+  {
+    "id": "pierce-boston",
+    "name": "Pierce Boston",
+    "aliases": [
+      "188 Brookline Ave",
+      "the Pierce"
+    ],
+    "street_address": "188 Brookline Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://thefenway.com/luxury-apartments/",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=188+Brookline+Ave%2C+Boston%2C+MA",
+    "search_query": "\"Pierce Boston\" Boston apartments"
+  },
+  {
+    "id": "burbank-apartments",
+    "name": "Burbank Apartments",
+    "aliases": [
+      "1260 Boylston"
+    ],
+    "street_address": "1260 Boylston",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://bostonpads.com/fenway-luxury-apartments",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1260+Boylston%2C+Boston%2C+MA",
+    "search_query": "\"Burbank Apartments\" Boston apartments"
+  },
+  {
+    "id": "the-harlo",
+    "name": "The Harlo",
+    "aliases": [
+      "Harlo",
+      "1350 Boylston"
+    ],
+    "street_address": "1350 Boylston",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://www.apartments.com/the-harlo-boston-ma/7t2jwhz",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1350+Boylston%2C+Boston%2C+MA",
+    "search_query": "\"The Harlo\" Boston apartments"
+  },
+  {
+    "id": "bower",
+    "name": "Bower",
+    "aliases": [
+      "771 Beacon St",
+      "Bower Fenway"
+    ],
+    "street_address": "771 Beacon St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://bostonpads.com/fenway-luxury-apartments",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=771+Beacon+St%2C+Boston%2C+MA",
+    "search_query": "\"Bower\" Boston apartments"
+  },
+  {
+    "id": "church-park",
+    "name": "Church Park",
+    "aliases": [
+      "Church Park Apartments"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Back Bay / Symphony",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://rent.brookfieldproperties.com/?p=5200",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Church+Park%2C+Boston%2C+MA",
+    "search_query": "\"Church Park\" Boston apartments"
+  },
+  {
+    "id": "150-camden",
+    "name": "150 Camden",
+    "aliases": [
+      "150 Camden St"
+    ],
+    "street_address": "150 Camden",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "South End",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://en.uhomes.com/us/boston/northeastern-university-nu",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=150+Camden%2C+Boston%2C+MA",
+    "search_query": "\"150 Camden\" Boston apartments"
+  },
+  {
+    "id": "lightview",
+    "name": "LightView",
+    "aliases": [
+      "Light View",
+      "744 Columbus Ave"
+    ],
+    "street_address": "744 Columbus Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Roxbury",
+    "campus": "affiliated",
+    "type": "complex",
+    "website": "https://www.americancampus.com/student-apartments/ma/boston/lightview",
+    "website_type": "official",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=744+Columbus+Ave%2C+Boston%2C+MA",
+    "search_query": "\"LightView\" Boston apartments"
+  },
+  {
+    "id": "mission-main",
+    "name": "Mission Main",
+    "aliases": [
+      "43 Smith St"
+    ],
+    "street_address": "43 Smith St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://aptsearch.northeastern.edu/housing/page-10",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=43+Smith+St%2C+Boston%2C+MA",
+    "search_query": "\"Mission Main\" Boston apartments"
+  },
+  {
+    "id": "mission-park-apartments",
+    "name": "Mission Park apartments",
+    "aliases": [
+      "835 Huntington Ave"
+    ],
+    "street_address": "835 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://www.apartments.com/mission-park-boston-ma/xhe4zzp",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=835+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"Mission Park apartments\" Boston apartments"
+  },
+  {
+    "id": "836-huntington-ave",
+    "name": "836 Huntington Ave",
+    "aliases": [
+      "836 Huntington"
+    ],
+    "street_address": "836 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/property/836-huntington-ave/jfsw0h6",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=836+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"836 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "838-huntington-ave",
+    "name": "838 Huntington Ave",
+    "aliases": [
+      "838 Huntington"
+    ],
+    "street_address": "838 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://forrent.com/ma/boston/838-huntington-ave/znhs8nz",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=838+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"838 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "840-huntington-ave",
+    "name": "840 Huntington Ave",
+    "aliases": [
+      "840 Huntington"
+    ],
+    "street_address": "840 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://forrentuniversity.com/ma/boston/840-huntington-ave/7zcrynz",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=840+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"840 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "848-huntington-ave",
+    "name": "848 Huntington Ave",
+    "aliases": [
+      "848 Huntington"
+    ],
+    "street_address": "848 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://offcampus.bu.edu/housing/property/848-huntington-ave/z2rn6cy",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=848+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"848 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "862-huntington-ave",
+    "name": "862 Huntington Ave",
+    "aliases": [
+      "862 Huntington"
+    ],
+    "street_address": "862 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/property/862-huntington-ave-boston-ma/tf9pdf9",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=862+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"862 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "864-huntington-ave",
+    "name": "864 Huntington Ave",
+    "aliases": [
+      "864 Huntington"
+    ],
+    "street_address": "864 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.apartments.com/864-huntington-ave-boston-ma/whwr04j/",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=864+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"864 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "868-huntington-ave",
+    "name": "868 Huntington Ave",
+    "aliases": [
+      "868 Huntington"
+    ],
+    "street_address": "868 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.southcoastrealtors.com/homes/868-Huntington-Ave/Boston/MA/02120/172223578/",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=868+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"868 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "882-huntington-ave",
+    "name": "882 Huntington Ave",
+    "aliases": [
+      "882 Huntington"
+    ],
+    "street_address": "882 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.forrentuniversity.com/ma/boston/2495-mission-hill-renovated-1-bedroom-near-northeastern-longwood-medical-area-and-multiple-univ/4dd7xnl",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=882+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"882 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "883-huntington-ave",
+    "name": "883 Huntington Ave",
+    "aliases": [
+      "883 Huntington"
+    ],
+    "street_address": "883 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.forrentuniversity.com/ma/boston/mission-hill-2-bed-modern-kitchen-and-bath-parking-available-9-1/m5gtjlh",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=883+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"883 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "1562-tremont-st",
+    "name": "1562 Tremont St",
+    "aliases": [
+      "1562 Tremont"
+    ],
+    "street_address": "1562 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/neighborhood-Mission+Hill_x2n4gzn",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1562+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"1562 Tremont St\" Boston apartments"
+  },
+  {
+    "id": "1572-tremont-st",
+    "name": "1572 Tremont St",
+    "aliases": [
+      "1572 Tremont"
+    ],
+    "street_address": "1572 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1572+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"1572 Tremont St\" Boston apartments"
+  },
+  {
+    "id": "1576-tremont-st",
+    "name": "1576 Tremont St",
+    "aliases": [
+      "1576 Tremont"
+    ],
+    "street_address": "1576 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.encoreliving.com/northeastern-university-apartments/Northeastern-Three-Bedroom-Apartments",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1576+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"1576 Tremont St\" Boston apartments"
+  },
+  {
+    "id": "78-hillside-st",
+    "name": "78 Hillside St",
+    "aliases": [
+      "78 Hillside"
+    ],
+    "street_address": "78 Hillside St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=78+Hillside+St%2C+Boston%2C+MA",
+    "search_query": "\"78 Hillside St\" Boston apartments"
+  },
+  {
+    "id": "128-hillside-st",
+    "name": "128 Hillside St",
+    "aliases": [
+      "128 Hillside"
+    ],
+    "street_address": "128 Hillside St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/neighborhood-Mission+Hill_x2n4gzn",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=128+Hillside+St%2C+Boston%2C+MA",
+    "search_query": "\"128 Hillside St\" Boston apartments"
+  },
+  {
+    "id": "8-eldora-st",
+    "name": "8 Eldora St",
+    "aliases": [
+      "8 Eldora"
+    ],
+    "street_address": "8 Eldora St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/neighborhood-Mission+Hill_x2n4gzn",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=8+Eldora+St%2C+Boston%2C+MA",
+    "search_query": "\"8 Eldora St\" Boston apartments"
+  },
+  {
+    "id": "1-sachem-st",
+    "name": "1 Sachem St",
+    "aliases": [
+      "1 Sachem"
+    ],
+    "street_address": "1 Sachem St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/neighborhood-Mission+Hill_x2n4gzn",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1+Sachem+St%2C+Boston%2C+MA",
+    "search_query": "\"1 Sachem St\" Boston apartments"
+  },
+  {
+    "id": "9-sewall-st",
+    "name": "9 Sewall St",
+    "aliases": [
+      "9 Sewall"
+    ],
+    "street_address": "9 Sewall St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=9+Sewall+St%2C+Boston%2C+MA",
+    "search_query": "\"9 Sewall St\" Boston apartments"
+  },
+  {
+    "id": "16-sewall-st",
+    "name": "16 Sewall St",
+    "aliases": [
+      "16 Sewall"
+    ],
+    "street_address": "16 Sewall St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/page-10",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=16+Sewall+St%2C+Boston%2C+MA",
+    "search_query": "\"16 Sewall St\" Boston apartments"
+  },
+  {
+    "id": "45-delle-ave",
+    "name": "45 Delle Ave",
+    "aliases": [
+      "45 Delle"
+    ],
+    "street_address": "45 Delle Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.encoreliving.com/northeastern-university-apartments/Northeastern-Three-Bedroom-Apartments",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=45+Delle+Ave%2C+Boston%2C+MA",
+    "search_query": "\"45 Delle Ave\" Boston apartments"
+  },
+  {
+    "id": "52-delle-ave",
+    "name": "52 Delle Ave",
+    "aliases": [
+      "52 Delle"
+    ],
+    "street_address": "52 Delle Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=52+Delle+Ave%2C+Boston%2C+MA",
+    "search_query": "\"52 Delle Ave\" Boston apartments"
+  },
+  {
+    "id": "39-millmont-st",
+    "name": "39 Millmont St",
+    "aliases": [
+      "39 Millmont"
+    ],
+    "street_address": "39 Millmont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Roxbury",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/move-in-2023-07-30/page-3",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=39+Millmont+St%2C+Boston%2C+MA",
+    "search_query": "\"39 Millmont St\" Boston apartments"
+  },
+  {
+    "id": "18-warwick-st",
+    "name": "18 Warwick St",
+    "aliases": [
+      "18 Warwick"
+    ],
+    "street_address": "18 Warwick St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Roxbury",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/page-10",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=18+Warwick+St%2C+Boston%2C+MA",
+    "search_query": "\"18 Warwick St\" Boston apartments"
+  },
+  {
+    "id": "38-hemenway-st",
+    "name": "38 Hemenway St",
+    "aliases": [
+      "38 Hemenway"
+    ],
+    "street_address": "38 Hemenway St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.encoreliving.com/northeastern-university-apartments/Northeastern-Three-Bedroom-Apartments",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=38+Hemenway+St%2C+Boston%2C+MA",
+    "search_query": "\"38 Hemenway St\" Boston apartments"
+  },
+  {
+    "id": "452-park-dr",
+    "name": "452 Park Dr",
+    "aliases": [
+      "452 Park Drive"
+    ],
+    "street_address": "452 Park Dr",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.encoreliving.com/northeastern-university-apartments/Northeastern-Three-Bedroom-Apartments",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=452+Park+Dr%2C+Boston%2C+MA",
+    "search_query": "\"452 Park Dr\" Boston apartments"
+  },
+  {
+    "id": "180-brookline-ave",
+    "name": "180 Brookline Ave",
+    "aliases": [
+      "180 Brookline"
+    ],
+    "street_address": "180 Brookline Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.encoreliving.com/northeastern-university-apartments/Northeastern-Three-Bedroom-Apartments",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=180+Brookline+Ave%2C+Boston%2C+MA",
+    "search_query": "\"180 Brookline Ave\" Boston apartments"
+  },
+  {
+    "id": "17-symphony-rd",
+    "name": "17 Symphony Rd",
+    "aliases": [
+      "17 Symphony Road"
+    ],
+    "street_address": "17 Symphony Rd",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/page-10",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=17+Symphony+Rd%2C+Boston%2C+MA",
+    "search_query": "\"17 Symphony Rd\" Boston apartments"
+  },
+  {
+    "id": "49-symphony-rd",
+    "name": "49 Symphony Rd",
+    "aliases": [
+      "49 Symphony Road"
+    ],
+    "street_address": "49 Symphony Rd",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/property/49-symphony-rd-apartments/ocppmbndlr",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=49+Symphony+Rd%2C+Boston%2C+MA",
+    "search_query": "\"49 Symphony Rd\" Boston apartments"
+  },
+  {
+    "id": "74-symphony-rd",
+    "name": "74 Symphony Rd",
+    "aliases": [
+      "74 Symphony Road"
+    ],
+    "street_address": "74 Symphony Rd",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/property/apartment-close-go-campus/ocpvve6e4d",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=74+Symphony+Rd%2C+Boston%2C+MA",
+    "search_query": "\"74 Symphony Rd\" Boston apartments"
+  },
+  {
+    "id": "hemenway-street",
+    "name": "Hemenway Street",
+    "aliases": [
+      "Hemenway St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Hemenway+Street%2C+Fenway%2C+Boston%2C+MA",
+    "search_query": "\"Hemenway Street\" Boston student apartments"
+  },
+  {
+    "id": "park-drive",
+    "name": "Park Drive",
+    "aliases": [
+      "Park Dr"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Park+Drive%2C+Fenway%2C+Boston%2C+MA",
+    "search_query": "\"Park Drive\" Boston student apartments"
+  },
+  {
+    "id": "peterborough-street",
+    "name": "Peterborough Street",
+    "aliases": [
+      "Peterborough St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Peterborough+Street%2C+Fenway%2C+Boston%2C+MA",
+    "search_query": "\"Peterborough Street\" Boston student apartments"
+  },
+  {
+    "id": "queensberry-street",
+    "name": "Queensberry Street",
+    "aliases": [
+      "Queensberry St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Queensberry+Street%2C+Fenway%2C+Boston%2C+MA",
+    "search_query": "\"Queensberry Street\" Boston student apartments"
+  },
+  {
+    "id": "symphony-road",
+    "name": "Symphony Road",
+    "aliases": [
+      "Symphony Rd"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Symphony+Road%2C+Symphony%2C+Boston%2C+MA",
+    "search_query": "\"Symphony Road\" Boston student apartments"
+  },
+  {
+    "id": "westland-avenue",
+    "name": "Westland Avenue",
+    "aliases": [
+      "Westland Ave"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Westland+Avenue%2C+Symphony%2C+Boston%2C+MA",
+    "search_query": "\"Westland Avenue\" Boston student apartments"
+  },
+  {
+    "id": "st-stephen-street",
+    "name": "St. Stephen Street",
+    "aliases": [
+      "St Stephen St",
+      "Saint Stephen Street"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=St.+Stephen+Street%2C+Symphony%2C+Boston%2C+MA",
+    "search_query": "\"St. Stephen Street\" Boston student apartments"
+  },
+  {
+    "id": "gainsborough-street",
+    "name": "Gainsborough Street",
+    "aliases": [
+      "Gainsborough St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Gainsborough+Street%2C+Symphony%2C+Boston%2C+MA",
+    "search_query": "\"Gainsborough Street\" Boston student apartments"
+  },
+  {
+    "id": "st-botolph-street",
+    "name": "St. Botolph Street",
+    "aliases": [
+      "St Botolph St",
+      "Saint Botolph Street"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "South End / Back Bay",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=St.+Botolph+Street%2C+South+End+%2F+Back+Bay%2C+Boston%2C+MA",
+    "search_query": "\"St. Botolph Street\" Boston student apartments"
+  },
+  {
+    "id": "hillside-street",
+    "name": "Hillside Street",
+    "aliases": [
+      "Hillside St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Hillside+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Hillside Street\" Boston student apartments"
+  },
+  {
+    "id": "delle-avenue",
+    "name": "Delle Avenue",
+    "aliases": [
+      "Delle Ave"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Delle+Avenue%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Delle Avenue\" Boston student apartments"
+  },
+  {
+    "id": "sewall-street",
+    "name": "Sewall Street",
+    "aliases": [
+      "Sewall St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Sewall+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Sewall Street\" Boston student apartments"
+  },
+  {
+    "id": "calumet-street",
+    "name": "Calumet Street",
+    "aliases": [
+      "Calumet St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Calumet+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Calumet Street\" Boston student apartments"
+  },
+  {
+    "id": "parker-hill-avenue",
+    "name": "Parker Hill Avenue",
+    "aliases": [
+      "Parker Hill Ave"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Parker+Hill+Avenue%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Parker Hill Avenue\" Boston student apartments"
+  },
+  {
+    "id": "smith-street",
+    "name": "Smith Street",
+    "aliases": [
+      "Smith St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Smith+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Smith Street\" Boston student apartments"
+  },
+  {
+    "id": "the-tremont",
+    "name": "The Tremont",
+    "aliases": [
+      "1480 Tremont St",
+      "1486 Tremont St"
+    ],
+    "street_address": "1480 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://www.apartments.com/the-tremont-boston-ma/l495qmg/",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1480+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"The Tremont\" Boston apartments"
+  },
+  {
+    "id": "the-laneway",
+    "name": "The Laneway",
+    "aliases": [
+      "9 Burney St"
+    ],
+    "street_address": "9 Burney St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/cheap-apartments-for-rent/page-2",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=9+Burney+St%2C+Boston%2C+MA",
+    "search_query": "\"The Laneway\" Boston apartments"
+  },
+  {
+    "id": "17-burney-st",
+    "name": "17 Burney St",
+    "aliases": [
+      "Burney Street Apartments"
+    ],
+    "street_address": "17 Burney St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://homes.com/boston-ma/mission-hill-neighborhood/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=17+Burney+St%2C+Boston%2C+MA",
+    "search_query": "\"17 Burney St\" Boston apartments"
+  },
+  {
+    "id": "the-rise-at-longwood",
+    "name": "The Rise at Longwood",
+    "aliases": [
+      "198 Hillside St"
+    ],
+    "street_address": "198 Hillside St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/cheap-apartments-for-rent/page-2",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=198+Hillside+St%2C+Boston%2C+MA",
+    "search_query": "\"The Rise at Longwood\" Boston apartments"
+  },
+  {
+    "id": "the-longwood",
+    "name": "The Longwood",
+    "aliases": [
+      "1575 Tremont St"
+    ],
+    "street_address": "1575 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://homes.com/boston-ma/mission-hill-neighborhood/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1575+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"The Longwood\" Boston apartments"
+  },
+  {
+    "id": "longwood-row",
+    "name": "Longwood Row",
+    "aliases": [
+      "1470 Tremont St"
+    ],
+    "street_address": "1470 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://apartments.com/longwood-row-boston-ma/kp71r5c",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1470+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"Longwood Row\" Boston apartments"
+  },
+  {
+    "id": "30-iroquois-st",
+    "name": "30 Iroquois St",
+    "aliases": [
+      "30 Iroquois"
+    ],
+    "street_address": "30 Iroquois St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/cheap-apartments-for-rent/page-2",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=30+Iroquois+St%2C+Boston%2C+MA",
+    "search_query": "\"30 Iroquois St\" Boston apartments"
+  },
+  {
+    "id": "68-calumet-st",
+    "name": "68 Calumet St",
+    "aliases": [
+      "68 Calumet"
+    ],
+    "street_address": "68 Calumet St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://homes.com/boston-ma/02120/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=68+Calumet+St%2C+Boston%2C+MA",
+    "search_query": "\"68 Calumet St\" Boston apartments"
+  },
+  {
+    "id": "the-fenway-apartments",
+    "name": "The Fenway Apartments",
+    "aliases": [
+      "121 Park Dr"
+    ],
+    "street_address": "121 Park Dr",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://aptsearch.northeastern.edu/housing/property/the-fenway-apartments/s5nkgj4",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=121+Park+Dr%2C+Boston%2C+MA",
+    "search_query": "\"The Fenway Apartments\" Boston apartments"
+  },
+  {
+    "id": "symphony-apartments",
+    "name": "Symphony Apartments",
+    "aliases": [
+      "90 Westland Ave"
+    ],
+    "street_address": "90 Westland Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://aptsearch.northeastern.edu/housing/property/symphony-apartments/t93vqy8",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=90+Westland+Ave%2C+Boston%2C+MA",
+    "search_query": "\"Symphony Apartments\" Boston apartments"
+  },
+  {
+    "id": "103-hemenway-st",
+    "name": "103 Hemenway St",
+    "aliases": [
+      "103 Hemenway"
+    ],
+    "street_address": "103 Hemenway St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://aptsearch.northeastern.edu/housing/property/103-hemenway-st-boston-ma/51640dn",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=103+Hemenway+St%2C+Boston%2C+MA",
+    "search_query": "\"103 Hemenway St\" Boston apartments"
+  },
+  {
+    "id": "790-boylston-st",
+    "name": "790 Boylston St",
+    "aliases": [
+      "Avalon 790 Boylston"
+    ],
+    "street_address": "790 Boylston St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Back Bay",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://veryapt.com/n462-apartments-near-northeastern-university-boston",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=790+Boylston+St%2C+Boston%2C+MA",
+    "search_query": "\"790 Boylston St\" Boston apartments"
+  },
+  {
+    "id": "62-on-the-park",
+    "name": "62 on the Park",
+    "aliases": [
+      "62 Boylston St"
+    ],
+    "street_address": "62 Boylston St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Back Bay",
+    "campus": "off",
+    "type": "complex",
+    "website": "https://aptsearch.northeastern.edu/housing/page-10",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=62+Boylston+St%2C+Boston%2C+MA",
+    "search_query": "\"62 on the Park\" Boston apartments"
+  },
+  {
+    "id": "840-columbus-ave-residence-hall",
+    "name": "840 Columbus Ave residence hall",
+    "aliases": [
+      "840 Columbus"
+    ],
+    "street_address": "840 Columbus Ave residence hall",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Roxbury",
+    "campus": "on",
+    "type": "planned",
+    "website": "https://news.northeastern.edu/2024/03/14/columbus-ave-new-dorm-plan/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=840+Columbus+Ave+residence+hall%2C+Boston%2C+MA",
+    "search_query": "\"840 Columbus Ave residence hall\" Northeastern housing"
+  },
+  {
+    "id": "burke-street-residence-hall",
+    "name": "Burke Street residence hall",
+    "aliases": [
+      "Burke St tower"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Roxbury",
+    "campus": "affiliated",
+    "type": "planned",
+    "website": "https://bostonmagazine.com/?p=2052901",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Burke+Street+residence+hall%2C+Boston%2C+MA",
+    "search_query": "\"Burke Street residence hall\" Boston apartments"
+  },
+  {
+    "id": "706-huntington-ave",
+    "name": "706 Huntington Ave",
+    "aliases": [
+      "706 Huntington"
+    ],
+    "street_address": "706 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://homes.com/boston-ma/mission-hill-neighborhood/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=706+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"706 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "846-huntington-ave",
+    "name": "846 Huntington Ave",
+    "aliases": [
+      "846 Huntington"
+    ],
+    "street_address": "846 Huntington Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=846+Huntington+Ave%2C+Boston%2C+MA",
+    "search_query": "\"846 Huntington Ave\" Boston apartments"
+  },
+  {
+    "id": "11-hillside-st",
+    "name": "11 Hillside St",
+    "aliases": [
+      "11 Hillside"
+    ],
+    "street_address": "11 Hillside St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://homes.com/boston-ma/02120/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=11+Hillside+St%2C+Boston%2C+MA",
+    "search_query": "\"11 Hillside St\" Boston apartments"
+  },
+  {
+    "id": "47-hillside-st",
+    "name": "47 Hillside St",
+    "aliases": [
+      "47 Hillside"
+    ],
+    "street_address": "47 Hillside St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=47+Hillside+St%2C+Boston%2C+MA",
+    "search_query": "\"47 Hillside St\" Boston apartments"
+  },
+  {
+    "id": "55-hillside-st",
+    "name": "55 Hillside St",
+    "aliases": [
+      "55 Hillside"
+    ],
+    "street_address": "55 Hillside St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=55+Hillside+St%2C+Boston%2C+MA",
+    "search_query": "\"55 Hillside St\" Boston apartments"
+  },
+  {
+    "id": "81-hillside-st",
+    "name": "81 Hillside St",
+    "aliases": [
+      "81 Hillside"
+    ],
+    "street_address": "81 Hillside St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=81+Hillside+St%2C+Boston%2C+MA",
+    "search_query": "\"81 Hillside St\" Boston apartments"
+  },
+  {
+    "id": "145-hillside-st",
+    "name": "145 Hillside St",
+    "aliases": [
+      "145 Hillside"
+    ],
+    "street_address": "145 Hillside St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=145+Hillside+St%2C+Boston%2C+MA",
+    "search_query": "\"145 Hillside St\" Boston apartments"
+  },
+  {
+    "id": "4-wigglesworth-st",
+    "name": "4 Wigglesworth St",
+    "aliases": [
+      "4 Wigglesworth"
+    ],
+    "street_address": "4 Wigglesworth St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=4+Wigglesworth+St%2C+Boston%2C+MA",
+    "search_query": "\"4 Wigglesworth St\" Boston apartments"
+  },
+  {
+    "id": "137-st-alphonsus-st",
+    "name": "137 St. Alphonsus St",
+    "aliases": [
+      "137 St. Alphonsus"
+    ],
+    "street_address": "137 St. Alphonsus St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=137+St.+Alphonsus+St%2C+Boston%2C+MA",
+    "search_query": "\"137 St. Alphonsus St\" Boston apartments"
+  },
+  {
+    "id": "178-st-alphonsus-st",
+    "name": "178 St. Alphonsus St",
+    "aliases": [
+      "178 St. Alphonsus"
+    ],
+    "street_address": "178 St. Alphonsus St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=178+St.+Alphonsus+St%2C+Boston%2C+MA",
+    "search_query": "\"178 St. Alphonsus St\" Boston apartments"
+  },
+  {
+    "id": "109-calumet-st",
+    "name": "109 Calumet St",
+    "aliases": [
+      "109 Calumet"
+    ],
+    "street_address": "109 Calumet St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=109+Calumet+St%2C+Boston%2C+MA",
+    "search_query": "\"109 Calumet St\" Boston apartments"
+  },
+  {
+    "id": "234-calumet-st",
+    "name": "234 Calumet St",
+    "aliases": [
+      "234 Calumet"
+    ],
+    "street_address": "234 Calumet St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/cheap-apartments-for-rent/page-2",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=234+Calumet+St%2C+Boston%2C+MA",
+    "search_query": "\"234 Calumet St\" Boston apartments"
+  },
+  {
+    "id": "6-wait-st",
+    "name": "6 Wait St",
+    "aliases": [
+      "6 Wait"
+    ],
+    "street_address": "6 Wait St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/cheap-apartments-for-rent/page-2",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=6+Wait+St%2C+Boston%2C+MA",
+    "search_query": "\"6 Wait St\" Boston apartments"
+  },
+  {
+    "id": "61-wait-st",
+    "name": "61 Wait St",
+    "aliases": [
+      "61 Wait"
+    ],
+    "street_address": "61 Wait St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=61+Wait+St%2C+Boston%2C+MA",
+    "search_query": "\"61 Wait St\" Boston apartments"
+  },
+  {
+    "id": "22-fisher-ave",
+    "name": "22 Fisher Ave",
+    "aliases": [
+      "22 Fisher"
+    ],
+    "street_address": "22 Fisher Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://homes.com/boston-ma/mission-hill-neighborhood/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=22+Fisher+Ave%2C+Boston%2C+MA",
+    "search_query": "\"22 Fisher Ave\" Boston apartments"
+  },
+  {
+    "id": "1526-tremont-st",
+    "name": "1526 Tremont St",
+    "aliases": [
+      "1526 Tremont"
+    ],
+    "street_address": "1526 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/boston-ma/02120/apartments-for-rent/p2/",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1526+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"1526 Tremont St\" Boston apartments"
+  },
+  {
+    "id": "1574-tremont-st",
+    "name": "1574 Tremont St",
+    "aliases": [
+      "1574 Tremont"
+    ],
+    "street_address": "1574 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/cheap-apartments-for-rent/page-2",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1574+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"1574 Tremont St\" Boston apartments"
+  },
+  {
+    "id": "1594-tremont-st",
+    "name": "1594 Tremont St",
+    "aliases": [
+      "1594 Tremont"
+    ],
+    "street_address": "1594 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://homes.com/boston-ma/mission-hill-neighborhood/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1594+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"1594 Tremont St\" Boston apartments"
+  },
+  {
+    "id": "1611-tremont-st",
+    "name": "1611 Tremont St",
+    "aliases": [
+      "1611 Tremont"
+    ],
+    "street_address": "1611 Tremont St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=1611+Tremont+St%2C+Boston%2C+MA",
+    "search_query": "\"1611 Tremont St\" Boston apartments"
+  },
+  {
+    "id": "35-delle-ave",
+    "name": "35 Delle Ave",
+    "aliases": [
+      "35 Delle"
+    ],
+    "street_address": "35 Delle Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://homes.com/boston-ma/mission-hill-neighborhood/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=35+Delle+Ave%2C+Boston%2C+MA",
+    "search_query": "\"35 Delle Ave\" Boston apartments"
+  },
+  {
+    "id": "44-delle-ave",
+    "name": "44 Delle Ave",
+    "aliases": [
+      "44 Delle"
+    ],
+    "street_address": "44 Delle Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=44+Delle+Ave%2C+Boston%2C+MA",
+    "search_query": "\"44 Delle Ave\" Boston apartments"
+  },
+  {
+    "id": "10-wensley-st",
+    "name": "10 Wensley St",
+    "aliases": [
+      "10 Wensley"
+    ],
+    "street_address": "10 Wensley St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.redfin.com/neighborhood/113/MA/Boston/Back-of-the-Hill-Rth/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=10+Wensley+St%2C+Boston%2C+MA",
+    "search_query": "\"10 Wensley St\" Boston apartments"
+  },
+  {
+    "id": "48-ellingwood-st",
+    "name": "48 Ellingwood St",
+    "aliases": [
+      "48 Ellingwood"
+    ],
+    "street_address": "48 Ellingwood St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/mission-hill-ma/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=48+Ellingwood+St%2C+Boston%2C+MA",
+    "search_query": "\"48 Ellingwood St\" Boston apartments"
+  },
+  {
+    "id": "170-parker-hill-ave",
+    "name": "170 Parker Hill Ave",
+    "aliases": [
+      "170 Parker Hill"
+    ],
+    "street_address": "170 Parker Hill Ave",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "address",
+    "website": "https://www.homes.com/mission-hill-ma/apartments-for-rent",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=170+Parker+Hill+Ave%2C+Boston%2C+MA",
+    "search_query": "\"170 Parker Hill Ave\" Boston apartments"
+  },
+  {
+    "id": "65-burbank-st",
+    "name": "65 Burbank St",
+    "aliases": [
+      "65 Burbank"
+    ],
+    "street_address": "65 Burbank St",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/neighborhood-Symphony_8y4c3p0/beds-3",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=65+Burbank+St%2C+Boston%2C+MA",
+    "search_query": "\"65 Burbank St\" Boston apartments"
+  },
+  {
+    "id": "11-symphony-rd",
+    "name": "11 Symphony Rd",
+    "aliases": [
+      "11 Symphony"
+    ],
+    "street_address": "11 Symphony Rd",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/neighborhood-Symphony_8y4c3p0/beds-3",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=11+Symphony+Rd%2C+Boston%2C+MA",
+    "search_query": "\"11 Symphony Rd\" Boston apartments"
+  },
+  {
+    "id": "42-symphony-rd",
+    "name": "42 Symphony Rd",
+    "aliases": [
+      "42 Symphony"
+    ],
+    "street_address": "42 Symphony Rd",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "address",
+    "website": "https://aptsearch.northeastern.edu/housing/neighborhood-Symphony_8y4c3p0/beds-2",
+    "website_type": "source",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=42+Symphony+Rd%2C+Boston%2C+MA",
+    "search_query": "\"42 Symphony Rd\" Boston apartments"
+  },
+  {
+    "id": "wigglesworth-street",
+    "name": "Wigglesworth Street",
+    "aliases": [
+      "Wigglesworth St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Wigglesworth+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Wigglesworth Street\" Boston student apartments"
+  },
+  {
+    "id": "st-alphonsus-street",
+    "name": "St. Alphonsus Street",
+    "aliases": [
+      "St Alphonsus St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=St.+Alphonsus+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"St. Alphonsus Street\" Boston student apartments"
+  },
+  {
+    "id": "fisher-avenue",
+    "name": "Fisher Avenue",
+    "aliases": [
+      "Fisher Ave"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Fisher+Avenue%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Fisher Avenue\" Boston student apartments"
+  },
+  {
+    "id": "wait-street",
+    "name": "Wait Street",
+    "aliases": [
+      "Wait St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Wait+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Wait Street\" Boston student apartments"
+  },
+  {
+    "id": "burney-street",
+    "name": "Burney Street",
+    "aliases": [
+      "Burney St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Burney+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Burney Street\" Boston student apartments"
+  },
+  {
+    "id": "ellingwood-street",
+    "name": "Ellingwood Street",
+    "aliases": [
+      "Ellingwood St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Ellingwood+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Ellingwood Street\" Boston student apartments"
+  },
+  {
+    "id": "wensley-street",
+    "name": "Wensley Street",
+    "aliases": [
+      "Wensley St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Mission Hill",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Wensley+Street%2C+Mission+Hill%2C+Boston%2C+MA",
+    "search_query": "\"Wensley Street\" Boston student apartments"
+  },
+  {
+    "id": "norway-street",
+    "name": "Norway Street",
+    "aliases": [
+      "Norway St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Symphony",
+    "campus": "off",
+    "type": "street",
+    "website": "https://aptsearch.northeastern.edu/housing/property/beautiful-top-floor-studio-norway-st-now-and-no-fee-symphony-fenway/ocp00ry692",
+    "website_type": "listing",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Norway+Street%2C+Symphony%2C+Boston%2C+MA",
+    "search_query": "\"Norway Street\" Boston student apartments"
+  },
+  {
+    "id": "burbank-street",
+    "name": "Burbank Street",
+    "aliases": [
+      "Burbank St"
+    ],
+    "street_address": "",
+    "city": "Boston",
+    "state": "MA",
+    "neighborhood": "Fenway",
+    "campus": "off",
+    "type": "street",
+    "website": "",
+    "website_type": "",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Burbank+Street%2C+Fenway%2C+Boston%2C+MA",
+    "search_query": "\"Burbank Street\" Boston student apartments"
+  }
+]
